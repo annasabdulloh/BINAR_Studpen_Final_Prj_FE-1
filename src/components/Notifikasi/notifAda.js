@@ -50,11 +50,13 @@ function NotifAda() {
             <div className=' col-sm-5'>
                 <div className='card g-3 p-3' style={{height: 450}}>
                     <div className='col-12'>
-                        <div className='card p-3 mb-3' style={{ width: 400, height: 100}}>
-                            <h6 className='text-primary'>Pembelian Tiket</h6>
-                            <p><small>Anda sudah memesan tiket, silahkan dilanjutkan untuk pembayaran dengan metode yang anda gunakan.
-                            </small></p>
-                        </div>
+                        <li className='list-group-item'>
+                            <div className='card p-3 mb-3' style={{ width: 400, height: 100}}>
+                                <h6 className='text-primary'>Pembelian Tiket</h6>
+                                <p><small>Anda sudah memesan tiket, silahkan dilanjutkan untuk pembayaran dengan metode yang anda gunakan.
+                                </small></p>
+                            </div>
+                        </li>
                         <div className='card p-3 mb-3' style={{ width: 400, height: 100}}>
                             <h6 className='text-primary'>Pembelian Tiket</h6>
                             <p><small>Anda sudah memesan tiket, silahkan dilanjutkan untuk pembayaran dengan metode yang anda gunakan.

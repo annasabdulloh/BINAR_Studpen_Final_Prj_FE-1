@@ -12,6 +12,7 @@ import NotifikasiAda from "./pages/Notifikasi/notifAda"
 import Verifikasi from "./pages/Verifikasi/verif";
 import VerifikasiGagal from "./pages/Verifikasi/verifGagal";
 import SettingPass from "./pages/Profile/settPass";
+import PagePopUpNotif from './pages/Notifikasi/popUpNotif'
 
 
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/verifikasi" element ={<Verifikasi/>}/>
         <Route path="/verifikasiGagal" element ={<VerifikasiGagal/>}/>
         <Route path="/settingPassword" element ={<SettingPass/>}/>
+        <Route path="/NotifikasiPopUp" element ={<PagePopUpNotif/>}/>
       </Routes>
     </BrowserRouter>
   );

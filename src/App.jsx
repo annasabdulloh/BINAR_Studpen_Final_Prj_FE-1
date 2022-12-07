@@ -1,6 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Dashboard from './pages/Dashboard'
@@ -24,10 +21,6 @@ function App() {
         <Route path='/hasilcheckin' element={<HasilCheckin />} />
       </Routes>
       <Footer />
-      {/* <Header/>
-      <Navbar />
-      <Dashboard />
-      <Footer/> */}
     </BrowserRouter>
   )
 }

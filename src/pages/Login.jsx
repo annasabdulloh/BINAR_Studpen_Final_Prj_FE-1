@@ -1,4 +1,46 @@
+import React, { useRef } from "react"
+import { Link, useNavigate } from "react-router-dom"
+
 export default function Login() {
+  const navigate = useNavigate()
+  const username = useRef(null)
+  const password = useRef(null)
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+
+    const data = {
+      username: username.current.value,
+      password: password.current.value,
+    }
+
+    try {
+      const url = 'https://binarstudpenfinalprojectbe-production.up.railway.app'
+      const response = await fetch(`${url}/api/v1/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: data.username,
+          password: data.password,
+        }),
+      })
+
+      const json = await response.json()
+      if (json) {
+        localStorage.setItem('x-token', json.token)
+        navigate('/')
+      }
+
+      console.log(json)
+    } catch (error) {
+      console.log(error)
+    }
+
+    console.log(data)
+  }
+
   return (
     <div>
       <img

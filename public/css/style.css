@@ -34,10 +34,10 @@ body {
   color: #656565;
 }
 
-.btn-grey {
+.btn-secondary {
   /* position: absolute; */
   /* left: 1062px; */
-  background: #656565;
+  /* background: #656565; */
   width: 119px;
   height: 37px;
   color: white;

@@ -37,7 +37,11 @@ export default function Checkin() {
               <br />
               <div className='field button mt-5'>
                 <Link className='active' to='/hasilcheckin'>
-                  <input type='submit' value={'Periksa Tiket'} />
+                  <input
+                    type='submit'
+                    value={'Periksa Tiket'}
+                    className='bg-primary text-light'
+                  />
                 </Link>
               </div>
             </div>

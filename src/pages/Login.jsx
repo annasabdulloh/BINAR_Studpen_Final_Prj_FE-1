@@ -37,10 +37,18 @@ export default function Login() {
             />
           </div>
           <div className='field button'>
-            <input type='submit' value={'Login'} />
+            <input
+              type='submit'
+              value={'Login'}
+              className='bg-primary text-light'
+            />
           </div>
           <div className='field'>
-            <input type='submit' value={'Login Dengan Google'} />
+            <input
+              type='submit'
+              value={'Login Dengan Google'}
+              className='bg-primary text-light'
+            />
           </div>
 
           <div className='signup-link text-center'>

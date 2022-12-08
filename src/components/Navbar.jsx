@@ -37,7 +37,10 @@ const Navbar = () => {
             </li>
           </ul>
           <Link className='nav-link' to='/login'>
-            <button className='btn btn-grey' style={{ marginLeft: '90px' }}>
+            <button
+              className='btn btn-secondary'
+              style={{ marginLeft: '90px' }}
+            >
               Login
             </button>
           </Link>

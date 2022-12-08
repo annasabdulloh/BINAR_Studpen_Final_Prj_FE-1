@@ -139,7 +139,7 @@ const Dashboard = () => {
           </div>
           <div className='col-3'>
             <div className='card'>
-              <img src='/assets/img/image 16.svg' className='card-img'></img>
+              <img src='/assets/img/image 16.jpg' className='card-img'></img>
               <div className='card-img-overlay'>
                 <h5 className='card-text'>
                   Unit Bisnis <br></br>Strategis
@@ -152,10 +152,11 @@ const Dashboard = () => {
           </div>
           <div className='col-3'>
             <div className='card'>
-              <img src='/assets/img/image 17.svg' className='card-imgs'></img>
+              <img src='/assets/img/image 17.jpg' className='card-img'></img>
               <div className='card-img-overlay'>
                 <h5 className='card-text'>
-                  Hubungan <br></br> Investor
+                  Hubungan <br />
+                  Investor
                 </h5>
                 <button className='btn btn-light text-primary'>
                   selengkapnya
@@ -165,10 +166,11 @@ const Dashboard = () => {
           </div>
           <div className='col-3'>
             <div className='card'>
-              <img src='/assets/img/image 18.svg' className='card-imgs'></img>
+              <img src='/assets/img/image 18.jpg' className='card-img'></img>
               <div className='card-img-overlay'>
                 <h5 className='card-text'>
-                  <br></br>CSR
+                  <br />
+                  CSR
                 </h5>
                 <button className='btn btn-light text-primary'>
                   selengkapnya

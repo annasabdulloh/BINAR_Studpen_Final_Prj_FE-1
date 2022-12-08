@@ -207,7 +207,11 @@ export default function Register() {
             </div>
           </div>
           <div className='field button'>
-            <input type='submit' defaultValue={'Registrasi Sekarang'} />
+            <input
+              type='submit'
+              defaultValue={'Registrasi Sekarang'}
+              className='bg-primary text-light'
+            />
           </div>
         </form>
       </div>

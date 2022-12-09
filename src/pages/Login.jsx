@@ -1,4 +1,46 @@
+import React, { useRef } from "react"
+import { Link, useNavigate } from "react-router-dom"
+
 export default function Login() {
+  const navigate = useNavigate()
+  const email = useRef(null)
+  const password = useRef(null)
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+
+    const data = {
+      email: email.current.value,
+      password: password.current.value,
+    }
+
+    try {
+      const url = 'https://binarstudpenfinalprojectbe-production.up.railway.app'
+      const response = await fetch(`${url}/api/v1/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
+      })
+
+      const json = await response.json()
+      if (json) {
+        localStorage.setItem('x-token', json.token)
+        navigate('/')
+      }
+
+      console.log(json)
+    } catch (error) {
+      console.log(error)
+    }
+
+    console.log(data)
+  }
+
   return (
     <div>
       <img
@@ -13,13 +55,14 @@ export default function Login() {
       />
       <div className='wrapper-login mx-auto position-relative'>
         <div className='title mt-5 pt-5  fw-bold'>Login Member</div>
-        <form action=''>
+        <form onSubmit={onSubmit} action=''>
           <div className='field'>
-            <label htmlFor='Username'>Username</label>
+            <label htmlFor='Username'>Email</label>
             <br />
             <input
+              ref={email}
               type='text'
-              placeholder='Masukkan Username'
+              placeholder='Masukkan Email'
               id='Username'
               className='form-control'
               required
@@ -29,6 +72,7 @@ export default function Login() {
             <label htmlFor='Password'>Password</label>
             <br />
             <input
+              ref={password}
               type='password'
               placeholder='Masukkan Password'
               id='Password'

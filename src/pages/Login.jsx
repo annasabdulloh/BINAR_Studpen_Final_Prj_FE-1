@@ -55,14 +55,14 @@ export default function Login() {
       />
       <div className='wrapper-login mx-auto position-relative'>
         <div className='title mt-5 pt-5  fw-bold'>Login Member</div>
-        <form onSubmit={onSubmit} action=''>
+        <form action='' onSubmit={onSubmit}>
           <div className='field'>
             <label htmlFor='Username'>Email</label>
             <br />
             <input
               ref={email}
               type='text'
-              placeholder='Masukkan Email'
+              placeholder='Masukkan Username'
               id='Username'
               className='form-control'
               required
@@ -95,8 +95,8 @@ export default function Login() {
             />
           </div>
 
-          <div className='signup-link text-center'>
-            Belum memiliki akun : <a href='#'> Register</a>
+          <div className='signup-link text-center text-decoration-none'>
+            Belum memiliki akun : <Link to='/register' style={{textDecoration: 'none'}}> Register</Link>
           </div>
         </form>
       </div>

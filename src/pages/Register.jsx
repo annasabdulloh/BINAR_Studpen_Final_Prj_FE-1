@@ -88,7 +88,7 @@ export default function Register() {
                 <div
                   className="judul text-primary text-center">
                     Register Member
-                </div>
+                  </div>
                   <form action='' className='col-12' 
                     onSubmit={onSubmit}>
                     <div className='text row align-content-center justify-content-center mb-5'>

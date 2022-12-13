@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/js/bootstrap.bundle.min"
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Dashboard from './pages/Dashboard'
@@ -7,6 +9,9 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Checkin from './pages/Checkin'
 import HasilCheckin from './pages/HasilCheckin'
+import TentangKami from './pages/TentangKami'
+import Verif from './pages/Verifikasi/index'
+// import DetailPembelian from "./pages/DetailPembelian/DetailPembelian"
 
 function App() {
   return (
@@ -19,6 +24,9 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/checkin' element={<Checkin />} />
         <Route path='/hasilcheckin' element={<HasilCheckin />} />
+        <Route path='/tentangkami' element={<TentangKami />} />
+        <Route path='/verif' element={<Verif />}/>
+        {/* <Route path='/detailpembelian' element={<DetailPembelian />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

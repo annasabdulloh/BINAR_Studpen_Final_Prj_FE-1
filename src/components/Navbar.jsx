@@ -36,7 +36,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <Link className='nav-link' to='/login'>
+          <Link className='nav-link p-3' to='/login'>
             <button
               className='btn btn-secondary'
               style={{ marginLeft: '90px' }}
@@ -45,7 +45,7 @@ const Navbar = () => {
             </button>
           </Link>
           <Link className='nav-link' to='/register'>
-            <button className='btn btn-blue' style={{ marginRight: '10px' }}>
+            <button className='btn btn-primary' style={{ marginRight: '10px' }}>
               Daftar
             </button>
           </Link>

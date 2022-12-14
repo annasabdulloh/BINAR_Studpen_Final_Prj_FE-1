@@ -48,13 +48,13 @@ export default function HasilCheckin() {
       </div>
 
       {/* Body-Rectangle */}
-      <div className="row pt-3 d-flex
+      <div className="row d-flex
                       justify-content-center
                       align-content-center 
                       p-3">
         <div className="col-sm-10">
           <div className="card g-3 
-                          p-5
+                          p-3
                           mx-auto">
             <div className="col-12">
               <div className="row pt-4 
@@ -69,7 +69,7 @@ export default function HasilCheckin() {
                         className='logo'
                     />
                   </div>
-                  <div className="col-md-3 
+                  <div className="col-md-2 
                                   my-3">
                     <div className="fw-bold">
                       Nama Pemesan
@@ -83,7 +83,7 @@ export default function HasilCheckin() {
                     </div>
                     <div>Jum'at, 25 Desember 2022</div>
                   </div>
-                  <div className="col-md-3 
+                  <div className="col-md-2 
                                   my-3">
                     <div className="fw-bold">
                       Nomor E-Ticket
@@ -96,7 +96,7 @@ export default function HasilCheckin() {
                 <div className="row
                                 pt-3
                                 mb-4">
-                  <div className="col-md-3 
+                  <div className="col-md-4 
                                   my-3">
                     <div className="card g-3 p-3 mb-1 
                                     text-center 

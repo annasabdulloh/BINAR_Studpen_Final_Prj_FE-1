@@ -81,7 +81,7 @@ export default function Register() {
             src='./assets/images/logo.png' 
             className='logo' />
         </div>
-        <div className='d-flex justify-content-center align-content-center p-3'>
+        <div className='row pt-3 d-flex justify-content-center align-content-center p-3'>
           <div className='col-sm-10'>
             <div className='card g-3 p-3 mx-auto'>
               <div className='col-12'>
@@ -91,8 +91,8 @@ export default function Register() {
                   </div>
                   <form action='' className='col-12' 
                     onSubmit={onSubmit}>
-                    <div className='text row align-content-center justify-content-center mb-5'>
-                      <div className='col-3 my-3'>
+                    <div className='text row pt-4 align-content-center justify-content-center p-2 mb-5'>
+                      <div className='col-md-3 my-3'>
                         <label htmlFor='title'>
                           Title
                         </label>
@@ -100,15 +100,15 @@ export default function Register() {
                           ref={title}
                           name=''
                           id='title'
-                          className='form-control'
+                          className='form-select-sm form-select'
                           required
                         >
-                          <option selected>--Pilih sapaan--</option>
+                          <option selected disabled>--Pilih sapaan--</option>
                           <option value='Mr'>Mr</option>
                           <option value='Mrs'>Mrs</option>
                         </select>
                       </div>
-                      <div className='col-4 my-3'>
+                      <div className='col-md-4 my-3'>
                         <label htmlFor='first_name'>Nama Depan</label>
                         <input
                           ref={nama_depan}
@@ -118,7 +118,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-4 my-3'>
+                      <div className='col-md-4 my-3'>
                         <label htmlFor='last-name'>Nama Belakang</label>
                         <input
                           ref={nama_belakang}
@@ -128,7 +128,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-3 my-3'>
+                      <div className='col-md-3 my-3'>
                         <label htmlFor='dateBirth'>Tanggal Lahir</label>
                         <input
                           ref={tanggal_lahir}
@@ -138,7 +138,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-4 my-3'>
+                      <div className='col-md-4 my-3'>
                         <label htmlFor='country'>Kebangsaan</label>
                         <input
                           ref={kebangsaan}
@@ -148,7 +148,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-4 my-3'>
+                      <div className='col-md-4 my-3'>
                       <label htmlFor='nophone'>No. Handphone</label>
                         <input
                           ref={no_handphone}
@@ -158,7 +158,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-6 my-3'>
+                      <div className='col-md-6 my-3'>
                         <label htmlFor='Email'>E-Mail</label>
                         <input
                           ref={email}
@@ -168,7 +168,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-5 my-3'>
+                      <div className='col-md-5 my-3'>
                         <label htmlFor='User'>Username</label>
                         <input
                           ref={username}
@@ -178,7 +178,7 @@ export default function Register() {
                           required
                         />
                       </div>
-                      <div className='col-6 my-3'>
+                      <div className='col-md-6 my-3'>
                         <label htmlFor='Pass'>Password</label>
                           <input
                             ref={password}
@@ -188,7 +188,7 @@ export default function Register() {
                             required
                           />
                       </div>
-                      <div className='col-5 my-3'>
+                      <div className='col-md-5 my-3'>
                         <label htmlFor='ConfirmPass'>Konfirmasi Password</label>
                         <input
                           ref={konfirmasi_password}

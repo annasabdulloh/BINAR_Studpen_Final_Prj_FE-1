@@ -81,7 +81,7 @@ export default function HasilCheckin() {
                     <div className="fw-bold">
                       Tanggal Pesan
                     </div>
-                    <div>Jum'at, 25 Desember 2022</div>
+                    <div>Jum&#39;at&apos; 25 Desember 2022</div>
                   </div>
                   <div className="col-md-2 
                                   my-3">
@@ -143,7 +143,7 @@ export default function HasilCheckin() {
                     <div className="card g-3 p-3 
                                     bg-secondary 
                                     bg-opacity-10">
-                      <div>Lombok Internaional Airport</div>
+                      <div>Lombok International Airport</div>
                     </div>
                   </div>
                 </div>

@@ -12,6 +12,7 @@ import HasilCheckin from './pages/HasilCheckin'
 import TentangKami from './pages/TentangKami'
 import Verif from './pages/Verifikasi/index'
 import DetailPembelian from './pages/DetailPembelian'
+import DetailPembelianTerisi from './pages/DetailPembelianTerisi'
 // import DetailPembelian from "./pages/DetailPembelian/DetailPembelian"
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
         <Route path='/tentangkami' element={<TentangKami />} />
         <Route path='/verif' element={<Verif />} />
         <Route path='/detailpembelian' element={<DetailPembelian />} />
+        <Route
+          path='/detailpembelianterisi'
+          element={<DetailPembelianTerisi />}
+        />
         {/* <Route path='/detailpembelian' element={<DetailPembelian />} /> */}
       </Routes>
       <Footer />

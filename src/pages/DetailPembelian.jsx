@@ -1,6 +1,47 @@
 import React from 'react'
+import {
+    useNavigationType,
+    useLocation,
+  } from "react-router-dom";
+import { useEffect } from "react";
 
 function DetailPembelian() {
+    const action = useNavigationType();
+    const location = useLocation();
+    const pathname = location.pathname;
+
+    useEffect(() => {
+        if (action !== "POP") {
+            window.scrollTo(0, 0);
+        }
+    }, [action]);
+
+    useEffect(() => {
+        let title = "";
+        let metaDescription = "";
+
+        //TODO: Upate meta titles and description below
+        switch (pathname) {
+            case "/":
+                title = "";
+                metaDescription = "";
+                break;
+        }
+
+        if (title) {
+            document.title = title;
+        }
+
+        if (metaDescription) {
+            const metaDescriptionTag = document.querySelector(
+                'head > meta[name="description"]'
+            );
+            if (metaDescriptionTag) {
+                metaDescriptionTag.content = metaDescription;
+            }
+        }
+    }, [pathname])
+
   return (
     <div>
         <div className='text-center bg-image p-3 mb-3'

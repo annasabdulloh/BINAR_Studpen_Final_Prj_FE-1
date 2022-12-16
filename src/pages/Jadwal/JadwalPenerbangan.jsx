@@ -90,8 +90,7 @@ function Jadwal() {
               </p>
               <p className='card-title'>Rab, 12 Okt 2022</p>
             </div>
-            <div className='row align-items-center justify-content-center position-absolute top-50 end-0 translate-middle'>
-            </div>
+            <div className='row align-items-center justify-content-center position-absolute top-50 end-0 translate-middle'></div>
           </div>
         </div>
       </div>

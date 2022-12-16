@@ -14,6 +14,7 @@ import Verif from './pages/Verifikasi/index'
 import DetailPembelian from './pages/DetailPembelian'
 import DetailPembelianTerisi from './pages/DetailPembelianTerisi'
 import Jadwal from './pages/Jadwal/JadwalPenerbangan'
+import NotifikasiAda from './pages/Notifikasi/NotifAda'
 // import DetailPembelian from "./pages/DetailPembelian/DetailPembelian"
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           path='/detailpembelianterisi'
           element={<DetailPembelianTerisi />}
         />
+        <Route path='/notifikasiada' element={<NotifikasiAda />} />
         {/* <Route path='/detailpembelian' element={<DetailPembelian />} /> */}
       </Routes>
       <Footer />

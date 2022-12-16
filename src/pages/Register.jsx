@@ -201,8 +201,9 @@ export default function Register() {
                     <div className='fw-bold'>
                       <input
                         type='submit'
+                        label='Reistrasi'
                         defaultValue={'Registrasi Sekarang'}
-                        className='btn-regist p-2 mb-3 bg-primary text-white fw-bold border-0'
+                        className='btn btn-primary p-2 mb-3 col-5 text-white fw-bold border-0'
                       />
                     </div>
                   </div>

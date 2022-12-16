@@ -26,12 +26,12 @@ body {
 }
 
 .navbar ul li a {
-  font-family: 'Poppins';
-  font-style: normal;
+  /* font-family: 'Poppins';
+  font-style: normal; */
   font-weight: 700;
   /* font-size: 20px; */
-  line-height: 30px;
-  color: #656565;
+  line-height: 50px;
+  /* color: #005eff; */
 }
 
 .btn-secondary {
@@ -43,10 +43,10 @@ body {
   color: white;
 }
 
-.btn-blue {
+.btn-primary {
   /* position: absolute; */
   /* left: 1199px; */
-  background: #0075cf;
+  /* background: #0075cf; */
   width: 119px;
   height: 37px;
   color: white;
@@ -55,41 +55,113 @@ body {
 /* end nav */
 
 .btn-kiri {
-  width: 250px;
-  height: 75px;
+  width: 200px;
+  height: 50px;
+  max-width: 100%;
   margin-right: 10px;
   background: #ff6a6a;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 17px;
   border: none;
 }
 
 .btn-kanan {
-  width: 250px;
-  height: 75px;
+  width: 200px;
+  height: 50px;
+  max-width: 100%;
   margin-left: 10px;
   background: #00b912;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 17px;
   border: none;
 }
 
-.btn-transparent {
+@media screen and (max-width: 768px) {
+  .btn-kiri {
+    width: 200px;
+    height: 50px;
+    max-width: 100%;
+    margin-right: 10px;
+    background: #ff6a6a;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+  }
+  
+  .btn-kanan {
+    width: 200px;
+    height: 50px;
+    max-width: 100%;
+    margin-left: 10px;
+    background: #00b912;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+  }
+
+  .img-head {
+    height: 400px;
+    
+  }
+}
+
+
+/* more */
+.btn-more-1 {
   border: 2px solid #ffffff;
   border-radius: 10px;
   width: 256px;
   height: 54px;
   font-size: 24px;
-  line-height: 36px;
 }
+
+.pesawat {
+  width: 239.71px;
+  height: 66.32px;
+}
+
+.text-more {
+  text-shadow: 1px 1px #000000;
+}
+
+@media screen and (max-width: 768px) {
+  .pesawat {
+    width: 100px;
+    height: 40px;
+  }
+
+  .text-more {
+    font-size: 25px;
+  }
+
+  .btn-more-1 {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    width: 180px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* end more */
 
 .kartu {
   padding-top: 100px;
   padding-left: 90px;
   padding-right: 100px;
   font-size: 20px;
+}
+
+.kartu .bg-choose {
+  background-color: #848484;
+}
+
+.kartu .bg-choose:hover {
+  background-color: #0075cf;
 }
 
 .kartu p {
@@ -108,11 +180,6 @@ body {
 
 .jarak {
   margin-top: 0px;
-}
-
-.pesawat {
-  width: 239.71px;
-  height: 66.32px;
 }
 
 .tentang-kami h2 {

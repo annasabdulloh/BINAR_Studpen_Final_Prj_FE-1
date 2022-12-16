@@ -23,28 +23,28 @@ const Dashboard = () => {
             className='col position-absolute top-50 start-50 translate-middle'
             style={{ display: 'inline-block' }}
           >
-              <div class="row mx-auto">
-                <div class="col-12 col-lg-6">
-                  <Link className='active' to='/login'>
-                    <button
-                      className='btn-kiri text-light fw-bold'
-                      style={{ maxwidth: '100%' }}
-                    >
-                      LIHAT PENERBANGAN
-                    </button>
+            <div className='row mx-auto'>
+              <div className='col-12 col-lg-6'>
+                <Link className='active' to='/login'>
+                  <button
+                    className='btn-kiri text-light fw-bold'
+                    style={{ maxwidth: '100%' }}
+                  >
+                    LIHAT PENERBANGAN
+                  </button>
                 </Link>
-                </div>
-                <div class="col-12 col-lg-6">
-                  <Link className='active' to='/login'>
-                    <button
-                      className='btn-kanan text-light fw-bold'
-                      style={{ maxwidth: '100%' }}
-                    >
-                      PESAN TIKET
-                    </button>
-                  </Link>
-                </div>
               </div>
+              <div className='col-12 col-lg-6'>
+                <Link className='active' to='/login'>
+                  <button
+                    className='btn-kanan text-light fw-bold'
+                    style={{ maxwidth: '100%' }}
+                  >
+                    PESAN TIKET
+                  </button>
+                </Link>
+              </div>
+            </div>
 
             {/* <Link className='active' to='/login'>
               <button
@@ -79,8 +79,9 @@ const Dashboard = () => {
             kami mengerti anda
             <br /> karena kami peduli
           </h2>
-          <button type="button" class="px-5 btn btn-outline-primary">Selengkapnya</button>
-
+          <button type='button' className='px-5 btn btn-outline-primary'>
+            Selengkapnya
+          </button>
         </div>
       </div>
       <div className='container'>

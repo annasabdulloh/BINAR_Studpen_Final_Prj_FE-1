@@ -17,7 +17,11 @@ function Verif() {
                 ></hr>
               </div>
               <div className='d-flex justify-content-center p-3'>
-                <img src='./assets/images/amplopVerif.png' style={{width: '300px'}} className='warn' />
+                <img
+                  src='./assets/images/amplopVerif.png'
+                  style={{ width: '300px' }}
+                  className='warn'
+                />
               </div>
               <div className='d-flex justify-content-center mb-3'>
                 <div
@@ -30,8 +34,8 @@ function Verif() {
               <div className='d-flex justify-content-center mb-3'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
                   <p>
-                    Email kamu berhasil di verifikasi, silahkan klik button
-                    di bawah untuk melanjutkan ke menu utama 
+                    Email kamu berhasil di verifikasi, silahkan klik button di
+                    bawah untuk melanjutkan ke menu utama
                   </p>
                 </div>
               </div>
@@ -47,9 +51,11 @@ function Verif() {
                   className='text-center text-secondary'
                   style={{ width: 434, height: 60 }}
                 >
-                  <p >
-                    Jika button di atas tidak berfungsi, anda juga bisa 
-                    klik <Link to='/' style={{textDecoration: 'none'}}>disini</Link>
+                  <p>
+                    Jika button di atas tidak berfungsi, anda juga bisa klik{' '}
+                    <Link to='/' style={{ textDecoration: 'none' }}>
+                      disini
+                    </Link>
                   </p>
                 </div>
               </div>

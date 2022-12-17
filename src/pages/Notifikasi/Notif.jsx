@@ -94,16 +94,16 @@ function Notif() {
         <div className='col-sm-7'>
           <div className='card g-3 p-5 mx-auto rounded-0 border bg-danger bg-opacity-10'>
             <div className='d-flex justify-content-center'>
-                <img
-                  src='./assets/images/amplop.png'
-                  style={{ width: 200, height: 200 }}
-                />
+              <img
+                src='./assets/images/amplop.png'
+                style={{ width: 200, height: 200 }}
+              />
+            </div>
+            <div className='d-flex justify-content-center'>
+              <div className='text-secondary text-center'>
+                <h3>Belum ada notifikasi baru untuk Anda</h3>
               </div>
-              <div className='d-flex justify-content-center'>
-                <div className='text-secondary text-center'>
-                  <h3>Belum ada notifikasi baru untuk Anda</h3>
-                </div>
-              </div>
+            </div>
             <div className='d-flex justify-content-center p-3'>
               <div className='position-absolute bottom-0 end-0 p-4'>
                 <Link to='#' className=' btn btn-primary'>

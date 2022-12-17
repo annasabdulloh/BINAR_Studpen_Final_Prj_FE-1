@@ -68,7 +68,7 @@ const Payment = () => {
                 </ul>
               </div>
               <div className='card'>
-              <div className='tab-content' id='myTabControl'>
+                <div className='tab-content' id='myTabControl'>
                   <div
                     className='tab-pane fade show'
                     role='tabpanel'
@@ -97,7 +97,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankMandiri.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -129,7 +129,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBCA.jpg'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -161,7 +161,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBRI.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -193,7 +193,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBNI.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -203,7 +203,7 @@ const Payment = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <h5 className='mx-4 mt-4'>Price Details</h5>
                     <div className='row mx-5'>
                       <div className='col'>
@@ -226,16 +226,19 @@ const Payment = () => {
                       <div className='row'>
                         <div className='col'>
                           <h5>Total Price</h5>
-                          <br/>
+                          <br />
                           <p>
-                            By clicking the button bellow, you agree to MyAIRFARE
-                            Terms &amp; Condition and Privacy Policy.
+                            By clicking the button bellow, you agree to
+                            MyAIRFARE Terms &amp; Condition and Privacy Policy.
                           </p>
                         </div>
                         <div className='col text-end'>
                           <h5 className='text-danger'>Rp. 3.157.400</h5>
-                          <br/>
-                          <button type='button' className='btn btn-bayar btn-primary'>
+                          <br />
+                          <button
+                            type='button'
+                            className='btn btn-bayar btn-primary'
+                          >
                             Bayar
                           </button>
                         </div>
@@ -270,7 +273,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bcaklikpay.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -302,7 +305,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/linkaja.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -334,7 +337,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/gopau.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -366,7 +369,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/sakuku.jfif'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='50px'
                                     height='30px'
                                   />
@@ -399,16 +402,19 @@ const Payment = () => {
                       <div className='row'>
                         <div className='col'>
                           <h5>Total Price</h5>
-                          <br/>
+                          <br />
                           <p>
-                            By clicking the button bellow, you agree to MyAIRFARE
-                            Terms &amp; Condition and Privacy Policy.
+                            By clicking the button bellow, you agree to
+                            MyAIRFARE Terms &amp; Condition and Privacy Policy.
                           </p>
                         </div>
                         <div className='col text-end'>
                           <h5 className='text-danger'>Rp. 3.157.400</h5>
-                          <br/>
-                          <button type='button' className='btn btn-bayar btn-primary'>
+                          <br />
+                          <button
+                            type='button'
+                            className='btn btn-bayar btn-primary'
+                          >
                             Bayar
                           </button>
                         </div>
@@ -443,7 +449,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBCA.jpg'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -475,7 +481,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankMandiri.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -507,7 +513,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBRI.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -539,7 +545,7 @@ const Payment = () => {
                                   <img
                                     src='../assets/img/bankBNI.png'
                                     alt=''
-                                    class='bankmandiri'
+                                    className='bankmandiri'
                                     width='100px'
                                   />
                                 </div>
@@ -571,16 +577,19 @@ const Payment = () => {
                       <div className='row'>
                         <div className='col'>
                           <h5>Total Price</h5>
-                          <br/>
+                          <br />
                           <p>
-                            By clicking the button bellow, you agree to MyAIRFARE
-                            Terms &amp; Condition and Privacy Policy.
+                            By clicking the button bellow, you agree to
+                            MyAIRFARE Terms &amp; Condition and Privacy Policy.
                           </p>
                         </div>
                         <div className='col text-end'>
                           <h5 className='text-danger'>Rp. 3.157.400</h5>
-                          <br/>
-                          <button type='button' className='btn btn-bayar btn-primary'>
+                          <br />
+                          <button
+                            type='button'
+                            className='btn btn-bayar btn-primary'
+                          >
                             Bayar
                           </button>
                         </div>

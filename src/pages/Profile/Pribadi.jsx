@@ -29,7 +29,6 @@ function Pribadi() {
                 alt='user'
                 style={{ width: 50, height: 50 }}
               />
-              
             </h5>
             <div className='col-md-10 mb-3'>
               <h5>Nama User</h5>

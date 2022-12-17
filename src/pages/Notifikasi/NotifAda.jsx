@@ -93,7 +93,6 @@ function NotifAda() {
         </div>
         <div className='col-sm-7'>
           <div className='card g-3 p-5 mx-auto rounded-0 border bg-danger bg-opacity-10'>
-            
             <div className='shadow mb-3 bg-body rounded p-3'>
               <div className='text-primary fs-5'>Pembelian Tiket</div>
               Anda sudah memesan tiket, silahkan dilanjutkan untuk

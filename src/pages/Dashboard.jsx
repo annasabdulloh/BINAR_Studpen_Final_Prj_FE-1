@@ -4,11 +4,13 @@ const Dashboard = () => {
   return (
     <>
       <div className=' body'>
+      <div className='d-flex body'>
         <div className='d-flex justify-content'>
           <img
             className='img-fluid'
             src='/assets/img/image 40.svg'
             style={{ maxwidth: '100%' }}
+            style={{ width: '100%' }}
           />
         </div>
       </div>
@@ -51,6 +53,11 @@ const Dashboard = () => {
                 className='btn-kiri text-light fw-bold'
                 style={{ maxwidth: '100%' }}
               >
+        <img className='img-fluid' src='/assets/img/image 25.svg' />
+        <div className='row text-center'>
+          <div className='col col-sm-12 position-absolute top-50 start-50 translate-middle'>
+            <Link className='active' to='/login'>
+              <button className='btn-kiri text-light fw-bold'>
                 LIHAT PENERBANGAN
               </button>
             </Link>
@@ -62,6 +69,10 @@ const Dashboard = () => {
                 PESAN TIKET
               </button>
             </Link> */}
+              <button className='btn-kanan text-light fw-bold'>
+                PESAN TIKET
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -80,6 +91,20 @@ const Dashboard = () => {
             <br /> karena kami peduli
           </h2>
           <button type='button' className='px-5 btn btn-outline-primary'>
+        <img
+          className='img-fluid logo'
+          src='/assets/img/travel-safely 1.svg'
+        ></img>
+        <div className='position-absolute top-50 start-50 translate-middle text-center '>
+          <img
+            className='img-fluid pesawat'
+            src='/assets/img/Group 10.svg'
+          ></img>
+          <h1 className='text-light fw-bold'>
+            kami mengerti anda
+            <br /> karena kami peduli
+          </h1>
+          <button className='btn btn-transparent border text-light'>
             Selengkapnya
           </button>
         </div>
@@ -175,6 +200,7 @@ const Dashboard = () => {
           <div className='col-lg-3 col-md-6 mt-3'>
             <div className='card'>
               <img src='/assets/img/image 15.jpg' className='card-img'></img>
+              <img src='/assets/img/image 15.svg' className='card-img'></img>
               <div className='card-img-overlay mb-5'>
                 <h5 className='card-text'>Profil Perusahaan</h5>
                 <button className='btn btn-light text-primary'>

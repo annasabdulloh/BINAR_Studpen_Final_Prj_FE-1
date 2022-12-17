@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 function Verif() {
   return (
     <div>
+      <div></div>
       <div className='row justify-content-center p-3'>
         <div className=' col-sm-5'>
           <div className='card g-3 p-3 kotak'>

@@ -3,3 +3,19 @@ body{
     font-family: 'Poppins', sans-serif;
     /* background-image: url("aset/background.png"); */
 }
+
+
+@media (max-width: 430px) {
+    .card-satu {
+        width: 290px;
+        margin-left: 10px;
+    }
+
+    /* .bankmandiri {
+        width: 80px;
+    } */
+}
+
+.btn-bayar {
+    margin-bottom: 100px;
+}

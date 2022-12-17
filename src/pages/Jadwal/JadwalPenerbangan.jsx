@@ -79,23 +79,8 @@ function Jadwal() {
           </div>
         </div>
       </div>
-      <div className='row justify-content-center p-2'>
-        <div className='col-sm-7'>
-          <div className='card'>
-            <div className='card-body p-3'>
-              <p className='card-title'>
-                Jakarta&nbsp;&nbsp;
-                <img src='./assets/images/rotate.png' />
-                &nbsp;&nbsp;Bali
-              </p>
-              <p className='card-title'>Rab, 12 Okt 2022</p>
-            </div>
-            <div className='row align-items-center justify-content-center position-absolute top-50 end-0 translate-middle'></div>
-          </div>
-        </div>
-      </div>
       <div className='d-flex justify-content-center'>
-        <div className='col-7 p-3'>
+        <div className='col-12 col-lg-8 p-3'>
           <div className='card'>
             <div className='table table-responsive'>
               <thead className='table-primary'>

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
       <div className='container'>
-        <a className='navbar-brand' href='#'>
+        <a className='navbar-brand' href='/'>
           <img src='/assets/img/logo web.png' alt='MyAIRFARE' width='200px' />
         </a>
         <button
@@ -26,17 +26,17 @@ const Navbar = () => {
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='#'>
+              <a className='nav-link' href='/checkin'>
                 CHECK IN
               </a>
             </li>
             <li className='nav-item '>
-              <a className='nav-link' href='#'>
+              <a className='nav-link' href='/tentangkami'>
                 TENTANG KAMI
               </a>
             </li>
             <li className='nav-item '>
-              <a className='nav-link' href='#'>
+              <a className='nav-link' href='/history'>
                 HISTORY
               </a>
             </li>

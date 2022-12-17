@@ -25,7 +25,7 @@ const Dashboard = () => {
           >
             <div className='row mx-auto'>
               <div className='col-12 col-lg-6'>
-                <Link className='active' to='/login'>
+                <Link className='active' to='/jadwalpenerbangan'>
                   <button
                     className='btn-kiri text-light fw-bold'
                     style={{ maxwidth: '100%' }}
@@ -35,7 +35,7 @@ const Dashboard = () => {
                 </Link>
               </div>
               <div className='col-12 col-lg-6'>
-                <Link className='active' to='/login'>
+                <Link className='active' to='/detailpembelian'>
                   <button
                     className='btn-kanan text-light fw-bold'
                     style={{ maxwidth: '100%' }}

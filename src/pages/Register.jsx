@@ -58,7 +58,7 @@ export default function Register() {
       // { token: string, user: any }
       if (json) {
         localStorage.setItem('x-token', json.token)
-        navigate('/')
+        navigate('/login')
       }
 
       console.log(json)

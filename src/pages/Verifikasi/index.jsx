@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-// import './style.css'
 
 function Verif() {
   return (
@@ -18,40 +17,39 @@ function Verif() {
                 ></hr>
               </div>
               <div className='d-flex justify-content-center p-3'>
-                <img src='./assets/images/amplopVerif.png' className='amplop' />
+                <img src='./assets/images/amplopVerif.png' style={{width: '300px'}} className='warn' />
               </div>
               <div className='d-flex justify-content-center mb-3'>
                 <div
                   className='text-primary text-center'
                   style={{ width: 271, height: 36 }}
                 >
-                  <h3 className=''>Verifikasi Email Kamu</h3>
+                  <h4 className=''>Verifikasi Email Kamu</h4>
                 </div>
               </div>
               <div className='d-flex justify-content-center mb-3'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
                   <p>
-                    Email kamu berhasil di verifikasi, silahkan klik button di
-                    bawah untuk melanjutkan ke menu utama
+                    Email kamu berhasil di verifikasi, silahkan klik button
+                    di bawah untuk melanjutkan ke menu utama 
                   </p>
                 </div>
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to='/'>
-                    <button className='btn btn-primary'>
-                      Kembali ke Dashboard
-                    </button>
+                  <Link to='/' className='btn btn-primary'>
+                    Dashboard Utama
                   </Link>
                 </div>
               </div>
               <div className='d-flex justify-content-center mb-3'>
-                <div className='text-center' style={{ width: 506, height: 60 }}>
-                  <p>
-                    Jika button di atas tidak berfungsi, anda juga bisa klik{' '}
-                    <Link to='#' className='text-primary'>
-                      disini
-                    </Link>
+                <div
+                  className='text-center text-secondary'
+                  style={{ width: 434, height: 60 }}
+                >
+                  <p >
+                    Jika button di atas tidak berfungsi, anda juga bisa 
+                    klik <Link to='/' style={{textDecoration: 'none'}}>disini</Link>
                   </p>
                 </div>
               </div>

@@ -93,6 +93,7 @@ function NotifAda() {
         </div>
         <div className='col-sm-7'>
           <div className='card g-3 p-5 mx-auto rounded-0 border bg-danger bg-opacity-10'>
+            
             <div className='shadow mb-3 bg-body rounded p-3'>
               <div className='text-primary fs-5'>Pembelian Tiket</div>
               Anda sudah memesan tiket, silahkan dilanjutkan untuk
@@ -113,14 +114,14 @@ function NotifAda() {
             </div>
             <div className='d-flex justify-content-center p-3'>
               <div className='position-absolute bottom-0 end-0 p-4'>
-                <Link to='#' className='p-3'>
+                <Link to='#' className='p-3 '>
                   <img
                     src='./assets/images/remove.png'
                     style={{ width: 30, height: 30 }}
                   />
                 </Link>
-                <Link to='#' className='btn btn-primary'>
-                  Kembali ke Dashboard
+                <Link to='#' className=' btn btn-primary'>
+                  Dashboard
                 </Link>
               </div>
             </div>

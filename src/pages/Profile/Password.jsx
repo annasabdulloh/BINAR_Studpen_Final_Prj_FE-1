@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import './profile.css'
 
 function Password() {
   return (
-    <div className='row justify-content-center jarak'>
+    <div className='mt-5 pt-5 row justify-content-center jarak'>
       <div className='col-sm-2'>
         <div className='card'>
           <div className='card-body p-3'>
@@ -13,17 +12,9 @@ function Password() {
                 alt='user'
                 style={{ width: 50, height: 50 }}
               />
-              Nama User
             </h5>
             <div className='col-md-10 mb-3'>
-              <a href='#' className='btn btn-primary'>
-                <img
-                  src='./assets/gear.svg'
-                  alt='gear'
-                  style={{ height: 30, width: 20 }}
-                />
-                Akun Saya
-              </a>
+              <h5>Nama User</h5>
             </div>
             <div className='col-md-8 mb-3'>
               <a href='#' className='btn btn-danger'>
@@ -39,7 +30,7 @@ function Password() {
             <ul className='nav nav-tabs card-header-tabs'>
               <li className='nav-item'>
                 <Link
-                  to='/settingData'
+                  to='/profile'
                   className='nav-link text-primary'
                   aria-current='true'
                 >
@@ -80,19 +71,21 @@ function Password() {
                 placeholder='Konfirmasi Password'
               />
             </div>
-            <div className='col-md-2'>
-              <Link to='#'>
-                <button type='submit' className='btn btn-primary'>
-                  Simpan
-                </button>
-              </Link>
-            </div>
-            <div className='col-md-2'>
-              <Link to='#'>
-                <button type='delete' className='btn btn-danger'>
-                  Batal
-                </button>
-              </Link>
+            <div className='row col-12 d-flex justify-content-center align-content-center p-3'>
+              <div className='col-md-3'>
+                <Link to='#'>
+                  <button type='submit' className='mt-3 btn btn-primary'>
+                    Simpan
+                  </button>
+                </Link>
+              </div>
+              <div className='col-md-3'>
+                <Link to='#'>
+                  <button type='delete' className='mt-3 btn btn-danger px-4'>
+                    Batal
+                  </button>
+                </Link>
+              </div>
             </div>
           </form>
         </div>

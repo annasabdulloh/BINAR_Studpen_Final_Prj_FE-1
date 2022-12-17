@@ -2,12 +2,29 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
+
+    <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
+      <div className='container'>
+        <a className='navbar-brand' href='/'>
+          <img src='/assets/img/logo web.png' alt='MyAIRFARE' width='200px' />
+        </a>
     <nav className='navbar navbar-expand-lg'>
       <div className='container-fluid'>
         <button
           className='navbar-toggler'
           type='button'
           data-bs-toggle='collapse'
+          data-bs-target='#navbarNav'
+          aria-controls='navbarNav'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span className='navbar-toggler-icon' />
+        </button>
+        <div className='collapse navbar-collapse mx-auto' id='navbarNav'>
+          <ul className='navbar-nav fs-6 mx-auto justify-content-center align-items-center'>
+            <li className='nav-item '>
+              <a className='nav-link' aria-current='page' href='#'>
           data-bs-target='#navbarTogglerDemo01'
           aria-controls='navbarTogglerDemo01'
           aria-expanded='false'
@@ -26,23 +43,67 @@ const Navbar = () => {
             <li className='nav-item active'>
               <Link className='nav-link' to='/'>
                 PESAWAT
-              </Link>
+              </a>
             </li>
-            <li className='nav-item active'>
-              <Link className='nav-link' to='/checkin'>
+            <li className='nav-item'>
+              <a className='nav-link' href='/checkin'>
                 CHECK IN
-              </Link>
+              </a>
             </li>
-            <li className='nav-item active'>
-              <Link className='nav-link' to='/tentangkami'>
+            <li className='nav-item '>
+              <a className='nav-link' href='/tentangkami'>
                 TENTANG KAMI
-              </Link>
+              </a>
             </li>
-            <li className='nav-item active'>
-              <Link className='nav-link' to='/history'>
+            <li className='nav-item '>
+              <a className='nav-link' href='/history'>
                 HISTORY
-              </Link>
+              </a>
             </li>
+            <li className='nav-item d-flex  px-5'></li>
+            <li className='nav-item dropdown d-flex '></li>
+            <li className='nav-item mx-2'>
+              <a className='nav-link' href='#'>
+                <img src='/assets/img/mdi_cart-minus.svg' alt='' />
+              </a>
+            </li>
+            <li className='nav-item '>
+              <a className='nav-link' href='#'>
+                <img src='/assets/img/image 70.svg' alt='' />
+              </a>
+            </li>
+            {/* <li className='nav-item'>
+                    <Link to='#' className='btn btn-primary'>Login</Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link to='#' className='btn btn-secondary mx-2'>Registrasi</Link>
+                  </li> */}
+            <Link to='/login' className='btn btn-primary'>
+              Login
+            </Link>
+            <Link to='/register' className='btn btn-secondary mx-2'>
+              Registrasi
+            </Link>
+            <ul
+              className='dropdown-menu dropdown-menu-dark'
+              aria-labelledby='navbarDarkDropdownMenuLink'
+            >
+              <li>
+                <a className='dropdown-item' href='#'>
+                  Action
+                </a>
+              </li>
+              <li>
+                <a className='dropdown-item' href='#'>
+                  Another action
+                </a>
+              </li>
+              <li>
+                <a className='dropdown-item' href='#'>
+                  Something else here
+                </a>
+              </li>
+            </ul>
           </ul>
           <ul className='navbar-nav me-auto'>
             <li>

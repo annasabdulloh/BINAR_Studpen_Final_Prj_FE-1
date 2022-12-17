@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './profile.css'
 import { Link } from 'react-router-dom'
 
 function Pribadi() {
@@ -20,7 +19,7 @@ function Pribadi() {
   }
 
   return (
-    <div className='row justify-content-center jarak'>
+    <div className='mt-5 pt-5 row justify-content-center jarak'>
       <div className='col-sm-2'>
         <div className='card'>
           <div className='card-body p-3'>
@@ -30,17 +29,9 @@ function Pribadi() {
                 alt='user'
                 style={{ width: 50, height: 50 }}
               />
-              Nama User
             </h5>
             <div className='col-md-10 mb-3'>
-              <Link to='#' className='btn btn-primary'>
-                <img
-                  src='./assets/gear.svg'
-                  alt='gear'
-                  style={{ height: 30, width: 20 }}
-                />
-                Akun Saya
-              </Link>
+              <h5>Nama User</h5>
             </div>
             <div className='col-md-8 mb-3'>
               <Link to='#' className='btn btn-danger'>
@@ -82,7 +73,7 @@ function Pribadi() {
                 placeholder='Nama Pengguna'
               />
             </div>
-            <div className='col-md-3'>
+            <div className='col-md-3 mb-4'>
               <label htmlFor='inputGander' className='form-label'>
                 Jenis Kelamin
               </label>
@@ -136,19 +127,21 @@ function Pribadi() {
                 placeholder='081xxxxxx'
               />
             </div>
-            <div className='col-md-2'>
-              <Link to='#'>
-                <button type='submit' className='btn btn-primary'>
-                  Simpan
-                </button>
-              </Link>
-            </div>
-            <div className='col-md-2'>
-              <Link to='#'>
-                <button type='delete' className='btn btn-danger'>
-                  Batal
-                </button>
-              </Link>
+            <div className='row col-12 d-flex justify-content-center align-content-center p-3'>
+              <div className='col-md-3'>
+                <Link to='#'>
+                  <button type='submit' className='mt-3 btn btn-primary'>
+                    Simpan
+                  </button>
+                </Link>
+              </div>
+              <div className='col-md-3'>
+                <Link to='#'>
+                  <button type='delete' className='mt-3 btn btn-danger px-4'>
+                    Batal
+                  </button>
+                </Link>
+              </div>
             </div>
           </form>
         </div>

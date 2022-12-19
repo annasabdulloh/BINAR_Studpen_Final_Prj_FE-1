@@ -25,6 +25,7 @@ import Password from './pages/Profile/Password'
 import { ProtectedRoute } from './components/Protected';
 import VerifFirst from './pages/Verifikasi/verifyFirst';
 import MyChart from './pages/MyChart';
+import PageCariTiketPP from './pages/CariTiket/PageCariTiketPP';
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         <Route path='/profile' element={<ProtectedRoute><Pribadi /></ProtectedRoute>} />
         <Route path='/settingPassword' element={<ProtectedRoute><Password /></ProtectedRoute>} />
         <Route path='/my-chart' element={<ProtectedRoute><MyChart /></ProtectedRoute>} />
+        <Route path='/caritiket' element={<ProtectedRoute><PageCariTiketPP /></ProtectedRoute>}/>
 
        
       </Routes>

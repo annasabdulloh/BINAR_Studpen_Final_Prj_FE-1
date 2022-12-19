@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+// import './style.css'
 
 function Verif() {
   return (
@@ -9,7 +10,7 @@ function Verif() {
           <div className='card g-3 p-3 kotak'>
             <div className='col-12'>
               <div className='d-flex justify-content-center p-3'>
-                <img src='./assets/images/logo.png' className='logo' />
+                <img src='/assets/images/logo.png' className='logo' />
               </div>
               <div className='d-flex justify-content-center'>
                 <hr
@@ -18,18 +19,14 @@ function Verif() {
                 ></hr>
               </div>
               <div className='d-flex justify-content-center p-3'>
-                <img
-                  src='./assets/images/amplopVerif.png'
-                  style={{ width: '300px' }}
-                  className='warn'
-                />
+                <img src='/assets/images/amplopVerif.png' className='amplop' />
               </div>
               <div className='d-flex justify-content-center mb-3'>
                 <div
                   className='text-primary text-center'
-                  style={{ width: 271, height: 36 }}
+                  style={{ height: 36 }}
                 >
-                  <h4 className=''>Verifikasi Email Kamu</h4>
+                  <h3 className=''>Verifikasi Email Kamu</h3>
                 </div>
               </div>
               <div className='d-flex justify-content-center mb-3'>
@@ -42,19 +39,18 @@ function Verif() {
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to='/' className='btn btn-primary'>
-                    Dashboard Utama
+                  <Link to='/'>
+                    <button className='btn btn-primary'>
+                      Kembali ke Dashboard
+                    </button>
                   </Link>
                 </div>
               </div>
               <div className='d-flex justify-content-center mb-3'>
-                <div
-                  className='text-center text-secondary'
-                  style={{ width: 434, height: 60 }}
-                >
+                <div className='text-center' style={{ width: 506, height: 60 }}>
                   <p>
                     Jika button di atas tidak berfungsi, anda juga bisa klik{' '}
-                    <Link to='/' style={{ textDecoration: 'none' }}>
+                    <Link to='#' className='text-primary'>
                       disini
                     </Link>
                   </p>

@@ -1,3 +1,6 @@
+// import logo from './logo.svg';
+import './App.css';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import Footer from './components/Footer'
@@ -9,51 +12,64 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Checkin from './pages/Checkin'
 import HasilCheckin from './pages/HasilCheckin'
-import TentangKami from './pages/TentangKami'
+import TentangKami from './pages/tentangKami';
 import Verif from './pages/Verifikasi/index'
 import VerifGagal from './pages/Verifikasi/VerifGagal'
 import DetailPembelian from './pages/DetailPembelian'
-import DetailPembelianTerisi from './pages/DetailPembelianTerisi'
 import Jadwal from './pages/Jadwal/JadwalPenerbangan'
-import Notif from './pages/Notifikasi/Notif'
 import NotifikasiAda from './pages/Notifikasi/NotifAda'
-import HistoryPembayaran from './pages/history'
+// import History from './pages/History'
+import HistoryMyTicket from "./pages/History/HistoryMyTicket";
 import Pribadi from './pages/Profile/Pribadi'
 import Password from './pages/Profile/Password'
-import Payment from './pages/payment'
-// import DetailPembelian from "./pages/DetailPembelian/DetailPembelian"
+import { ProtectedRoute } from './components/Protected';
+import VerifFirst from './pages/Verifikasi/verifyFirst';
 
 function App() {
   return (
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       Edit <code>src/App.js</code> and save to reload.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //   </header>
+    // </div>
     <BrowserRouter>
       <Header />
       <Navbar />
       <Routes>
-        <Route path='/' element={<Dashboard />} />
+
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/checkin' element={<Checkin />} />
-        <Route path='/hasilcheckin' element={<HasilCheckin />} />
-        <Route path='/tentangkami' element={<TentangKami />} />
-        <Route path='/verif' element={<Verif />} />
-        <Route path='/verifikasigagal' element={<VerifGagal />} />
-        <Route path='/detailpembelian' element={<DetailPembelian />} />
-        <Route path='/jadwalpenerbangan' element={<Jadwal />} />
-        <Route
-          path='/detailpembelianterisi'
-          element={<DetailPembelianTerisi />}
-        />
-        <Route path='/notifikasi' element={<Notif />} />
-        <Route path='/notifikasiada' element={<NotifikasiAda />} />
-        <Route path='/history' element={<HistoryPembayaran />} />
-        <Route path='/profile' element={<Pribadi />} />
-        <Route path='/settingPassword' element={<Password />} />
-        <Route path='/payment' element={<Payment />} />
-        {/* <Route path='/detailpembelian' element={<DetailPembelian />} /> */}
+        <Route path='/jadwalpenerbangan' element={<ProtectedRoute active={false}><Jadwal /></ProtectedRoute>} />
+        <Route path='/' element={<ProtectedRoute active={false}><Dashboard /></ProtectedRoute>} />
+        <Route path='/please-verify' element={<VerifFirst></VerifFirst>}/>
+
+
+        <Route path='/checkin' element={<ProtectedRoute><Checkin /></ProtectedRoute>} />
+        <Route path='/hasilcheckin' element={<ProtectedRoute><HasilCheckin /></ProtectedRoute>} />
+        <Route path='/tentangkami' element={<ProtectedRoute><TentangKami /></ProtectedRoute>} />
+        <Route path='/verif' element={<ProtectedRoute><Verif /></ProtectedRoute>} />
+        <Route path='/verifikasigagal' element={<ProtectedRoute><VerifGagal /></ProtectedRoute>} />
+        <Route path='/detailpembelian' element={<ProtectedRoute><DetailPembelian /></ProtectedRoute>} />
+        <Route path='/notifikasiada' element={<ProtectedRoute><NotifikasiAda /></ProtectedRoute>} />
+        <Route path="/my-ticket" element={<ProtectedRoute><HistoryMyTicket /></ProtectedRoute>} />
+        <Route path='/profile' element={<ProtectedRoute><Pribadi /></ProtectedRoute>} />
+        <Route path='/settingPassword' element={<ProtectedRoute><Password /></ProtectedRoute>} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

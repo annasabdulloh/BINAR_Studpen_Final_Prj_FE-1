@@ -1,8 +1,8 @@
 export default function TentangKami() {
   return (
     <div>
-      <img
-        src='../../public/assets/images/girl.png'
+      <img width={"100%"}
+        src='/assets/images/girl.png'
         className='img-fluid mb-1'
       ></img>
       <div className='p-5'>

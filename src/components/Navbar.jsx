@@ -1,132 +1,165 @@
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
-  return (
+import PopUpNotifikasi from "../pages/Notifikasi/PopUpNotif";
+import PopUp from '../pages/Profile/popUp';
 
-    <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
-      <div className='container'>
-        <a className='navbar-brand' href='/'>
-          <img src='/assets/img/logo web.png' alt='MyAIRFARE' width='200px' />
-        </a>
+const Navbar = () => {
+
+  const [profileOpn, setOpenProfile] = useState(true)
+  const [notifOpen, setNotif] = useState(true)
+  const [navOpen, setOpen] = useState(true)
+  let nav = document.getElementById('nav')
+  let notif = document.getElementById('popup-notif')
+  let iconProfile = document.getElementById('popup-profile')
+  const { getUserData } = useSelector(state => state.userReducer)
+
+  function handleClickOpen() {
+    nav = document.getElementById('nav')
+    console.log(nav, navOpen);
+    try {
+      if (navOpen) {
+        nav.classList.add('show')
+      } else {
+        nav.classList.remove('show')
+      }
+      setOpen(!navOpen)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function handleClickNotif() {
+    notif = document.getElementById('popup-notif')
+    console.log(notif, notifOpen);
+    try {
+      if (notifOpen) {
+        notif.classList.remove('d-none')
+      } else {
+        notif.classList.add('d-none')
+      }
+      setNotif(!notifOpen)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function handleClickProfile() {
+    iconProfile = document.getElementById('popup-profile')
+    try {
+      if (profileOpn) {
+        iconProfile.classList.remove('d-none')
+      } else {
+        iconProfile.classList.add('d-none')
+      }
+      setOpenProfile(!profileOpn)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    console.log(getUserData);
+  })
+
+  return (
     <nav className='navbar navbar-expand-lg'>
+      <div id='popup-notif' className='d-none'>
+        <PopUpNotifikasi></PopUpNotifikasi>
+      </div>
+      <div id="popup-profile" className='d-none'>
+        <PopUp></PopUp>
+      </div>
       <div className='container-fluid'>
+        <a className='navbar-brand' href='#'>
+          <img alt='icon' src='/assets/img/logo web1.svg' className='logoweb1 ps-2'></img>
+        </a>
         <button
           className='navbar-toggler'
           type='button'
           data-bs-toggle='collapse'
-          data-bs-target='#navbarNav'
-          aria-controls='navbarNav'
+          // data-bs-target='#navbarTogglerDemo01'
+          // aria-controls='navbarTogglerDemo01'
           aria-expanded='false'
           aria-label='Toggle navigation'
-        >
-          <span className='navbar-toggler-icon' />
-        </button>
-        <div className='collapse navbar-collapse mx-auto' id='navbarNav'>
-          <ul className='navbar-nav fs-6 mx-auto justify-content-center align-items-center'>
-            <li className='nav-item '>
-              <a className='nav-link' aria-current='page' href='#'>
-          data-bs-target='#navbarTogglerDemo01'
-          aria-controls='navbarTogglerDemo01'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
+          // onClick={OpenNavBar('nav')}
+          onClick={handleClickOpen}
         >
           <span className='navbar-toggler-icon'></span>
         </button>
-        <div className='collapse navbar-collapse ' id='navbarTogglerDemo01'>
-          <a className='navbar-brand' href='#'>
-            <img src='/assets/img/logo web1.svg' className='logoweb1'></img>
-          </a>
+        <div className='collapse navbar-collapse text-center' id='nav'>
           <ul
             className='navbar-nav ms-auto'
-            // style={{ marginLeft: '170px', marginRight: '10px' }}
+          // style={{ marginLeft: '170px', marginRight: '10px' }}
           >
             <li className='nav-item active'>
               <Link className='nav-link' to='/'>
                 PESAWAT
-              </a>
+              </Link>
             </li>
-            <li className='nav-item'>
-              <a className='nav-link' href='/checkin'>
+            <li className='nav-item active'>
+              <Link className='nav-link' to='/checkin'>
                 CHECK IN
-              </a>
+              </Link>
             </li>
-            <li className='nav-item '>
-              <a className='nav-link' href='/tentangkami'>
+            <li className='nav-item active'>
+              <Link className='nav-link' to='/tentangkami'>
                 TENTANG KAMI
-              </a>
+              </Link>
             </li>
-            <li className='nav-item '>
-              <a className='nav-link' href='/history'>
-                HISTORY
-              </a>
+            <li className='nav-item active'>
+              <Link className='nav-link' to='/my-ticket'>
+                MY TIKCET
+              </Link>
             </li>
-            <li className='nav-item d-flex  px-5'></li>
-            <li className='nav-item dropdown d-flex '></li>
-            <li className='nav-item mx-2'>
-              <a className='nav-link' href='#'>
-                <img src='/assets/img/mdi_cart-minus.svg' alt='' />
-              </a>
-            </li>
-            <li className='nav-item '>
-              <a className='nav-link' href='#'>
-                <img src='/assets/img/image 70.svg' alt='' />
-              </a>
-            </li>
-            {/* <li className='nav-item'>
-                    <Link to='#' className='btn btn-primary'>Login</Link>
-                  </li>
-                  <li className='nav-item'>
-                    <Link to='#' className='btn btn-secondary mx-2'>Registrasi</Link>
-                  </li> */}
-            <Link to='/login' className='btn btn-primary'>
-              Login
-            </Link>
-            <Link to='/register' className='btn btn-secondary mx-2'>
-              Registrasi
-            </Link>
-            <ul
-              className='dropdown-menu dropdown-menu-dark'
-              aria-labelledby='navbarDarkDropdownMenuLink'
-            >
+          </ul>
+
+          {getUserData ? (
+            <ul className='navbar-nav ms-auto'>
               <li>
-                <a className='dropdown-item' href='#'>
-                  Action
+                <a className='nav-link' href='#'>
+                  <img src='/assets/images/cart.png' alt='' />
                 </a>
               </li>
               <li>
-                <a className='dropdown-item' href='#'>
-                  Another action
+                <a className='nav-link' onClick={handleClickNotif}>
+                  <img src='/assets/images/bell.png' alt='' />
                 </a>
               </li>
-              <li>
-                <a className='dropdown-item' href='#'>
-                  Something else here
+              <li id='icon-profile' className=''>
+                <a className='nav-link rounded-circle' href='#' onClick={handleClickProfile}>
+                  {getUserData.email} <img width={"40px"} src='/assets/images/user.png' alt='' />
                 </a>
               </li>
             </ul>
-          </ul>
-          <ul className='navbar-nav me-auto'>
-            <li>
-              <Link className='nav-link p-3' to='/login'>
-                <button
-                  className='btn btn-secondary'
-                  style={{ marginLeft: '90px' }}
-                >
-                  Login
-                </button>
-              </Link>
-            </li>
-            <li>
-              <Link className='nav-link' to='/register'>
-                <button
-                  className='btn btn-primary'
-                  style={{ marginRight: '10px' }}
-                >
-                  Daftar
-                </button>
-              </Link>
-            </li>
-          </ul>
+          ) : (
+            <ul className='navbar-nav ms-auto'>
+              <li id='btn-no-login'>
+                <div className="row">
+                  <div className="col-sm-6 text-sm-end">
+                    <Link className='nav-link pe-0' to='/login'>
+                      <button
+                        className='btn btn-secondary w-100'
+                      >
+                        Login
+                      </button>
+                    </Link>
+                  </div>
+                  <div className="col-sm-6 text-sm-start">
+                    <Link className='nav-link ps-0' to='/register'>
+                      <button
+                        className='btn btn-primary w-100'
+                        style={{ marginRight: '10px' }}
+                      >
+                        Daftar
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </nav>

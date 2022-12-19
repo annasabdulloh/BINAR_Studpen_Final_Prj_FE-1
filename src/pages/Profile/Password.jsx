@@ -8,7 +8,7 @@ function Password() {
           <div className='card-body p-3'>
             <h5 className='card-title mb-3'>
               <img
-                src='./assets/images/user.png'
+                src='/assets/images/user.png'
                 alt='user'
                 style={{ width: 50, height: 50 }}
               />

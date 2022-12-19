@@ -1,15 +1,17 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../css/register.css'
 
 export default function Register() {
   const navigate = useNavigate()
+  const [errMsg, setErrMsg] = useState(null)
+  const [loading, setLoading] = useState(false)
   const title = useRef(null)
   const nama_depan = useRef(null)
   const nama_belakang = useRef(null)
-  const tanggal_lahir = useRef(null)
-  const kebangsaan = useRef(null)
-  const no_handphone = useRef(null)
+  // const tanggal_lahir = useRef(null)
+  // const kebangsaan = useRef(null)
+  // const no_handphone = useRef(null)
   const email = useRef(null)
   const konfirmasi_password = useRef(null)
   const username = useRef(null)
@@ -21,14 +23,15 @@ export default function Register() {
    */
   const onSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
 
     const data = {
       title: title.current.value,
       nama_depan: nama_depan.current.value,
       nama_belakang: nama_belakang.current.value,
-      tanggal_lahir: tanggal_lahir.current.value,
-      kebangsaan: kebangsaan.current.value,
-      no_handphone: no_handphone.current.value,
+      // tanggal_lahir: tanggal_lahir.current.value,
+      // kebangsaan: kebangsaan.current.value,
+      // no_handphone: no_handphone.current.value,
       email: email.current.value,
       konfirmasi_password: konfirmasi_password.current.value,
       username: username.current.value,
@@ -36,7 +39,7 @@ export default function Register() {
     }
 
     try {
-      const url = 'https://binarstudpenfinalprojectbe-production.up.railway.app'
+      const url = `${process.env.REACT_APP_API_SERVER_URL}`
       const response = await fetch(`${url}/api/v1/register`, {
         method: 'POST',
         headers: {
@@ -56,28 +59,28 @@ export default function Register() {
       const json = await response.json()
       // "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiODczYjJkNzUtOGM5NS00NDQ5LWI2Y2YtMDA5M2RmMzYzZWRkIiwiaWF0IjoxNjcwMjU5NTg4fQ.gxPNw68L1Nf5kdX9I1Fc535qDNbtLRezq3JmECVjr9A"
       // { token: string, user: any }
-      if (json) {
-        localStorage.setItem('x-token', json.token)
-        navigate('/login')
+      if (response.status === 200) {
+        localStorage.setItem('x-access-token', json.token)
+        navigate('/please-verify')
+      } else {
+        setErrMsg(json.errors)
+        setLoading(false)
       }
-
-      console.log(json)
     } catch (error) {
-      console.log(error)
+      setErrMsg(error)
+      setLoading(false)
     }
-
-    console.log(data)
   }
   return (
     <div>
       <div
         className='bg-image p-3 mb-4'
-        style={{ backgroundImage: 'url("./assets/img/Image 24.svg")' }}
+        style={{ backgroundImage: 'url("/assets/images/image-25@2x.png")' }}
       >
         <div className='d-flex justify-content-center p-3'>
           <img
             style={{ width: 200 }}
-            src='./assets/images/logo.png'
+            src='/assets/images/logo.png'
             className='logo'
           />
         </div>
@@ -88,6 +91,9 @@ export default function Register() {
                 <div className='judul text-primary text-center'>
                   Register Member
                 </div>
+                {errMsg != null ? (<div className="alert alert-danger mt-3 mb-3" role="alert">
+                  `{errMsg}`
+                </div>) : ''}
                 <form action='' className='col-12' onSubmit={onSubmit}>
                   <div className='text row pt-4 align-content-center justify-content-center p-2 mb-5'>
                     <div className='col-md-3 my-3'>
@@ -98,10 +104,8 @@ export default function Register() {
                         id='title'
                         className='form-select-sm form-select'
                         required
+                        defaultValue={"Mr"}
                       >
-                        <option selected disabled>
-                          --Pilih sapaan--
-                        </option>
                         <option value='Mr'>Mr</option>
                         <option value='Mrs'>Mrs</option>
                       </select>
@@ -126,7 +130,7 @@ export default function Register() {
                         required
                       />
                     </div>
-                    <div className='col-md-3 my-3'>
+                    {/* <div className='col-md-3 my-3'>
                       <label htmlFor='dateBirth'>Tanggal Lahir</label>
                       <input
                         ref={tanggal_lahir}
@@ -155,7 +159,7 @@ export default function Register() {
                         className='form-control'
                         required
                       />
-                    </div>
+                    </div> */}
                     <div className='col-md-6 my-3'>
                       <label htmlFor='Email'>E-Mail</label>
                       <input
@@ -198,7 +202,13 @@ export default function Register() {
                     </div>
                   </div>
                   <div className='col-12 justify-content-center text-center'>
-                    <div className='fw-bold'>
+                    {loading ? (
+                      <button className="btn btn-primary mb-3 disabled" type="button" disabled>
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Loading...
+                    </button>
+                    ) : (
+                      <div className='fw-bold'>
                       <input
                         type='submit'
                         label='Reistrasi'
@@ -206,6 +216,8 @@ export default function Register() {
                         className='btn btn-primary p-2 mb-3 col-5 text-white fw-bold border-0'
                       />
                     </div>
+                    )}
+                    
                   </div>
                 </form>
               </div>
@@ -214,7 +226,7 @@ export default function Register() {
         </div>
       </div>
       {/* <img
-        src='/assets/img/Image 24.svg'
+        src='/assets/images/image-25@2x.png'
         alt=''
         className='position-absolute bg-reg'
       />

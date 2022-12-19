@@ -7,7 +7,7 @@ export default function Checkin() {
         className='text-center
                       bg-image
                       p-3 mb-4'
-        style={{ backgroundImage: 'url("./assets/img/Image 25.svg")' }}
+        style={{ backgroundImage: 'url("/assets/images/image-38@2x.png")' }}
       >
         <div
           className='d-flex 

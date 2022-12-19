@@ -1,57 +1,126 @@
-import { useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+// ======================== Catatan =========================================
+
+// Sistem navigate redirect back ini mmasih basic, diperlukan tahap selanjutnya menggunakan redux untuk mendaoatkan history page yang sebelumnya dibuka
+
+// ==========================================================================
+
+import { useRef, useState } from 'react'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 import '../css/login.css'
+// const dotenv = require('dotenv').config();
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+import jwt from 'jwt-decode'
+
+async function ajaxLogin(email, password) {
+  const data = {
+    email, password
+  }
+  const url = `${process.env.REACT_APP_API_SERVER_URL}`
+  // console.log(process.env.REACT_APP_API_SERVER, process.env.REACT_APP_ENDPOINT_BASE_URL, url);
+  const response = await fetch(`${url}/api/v1/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: data.email,
+      password: data.password,
+    }),
+  })
+
+  return response
+}
 
 export default function Login() {
   const navigate = useNavigate()
   const email = useRef(null)
   const password = useRef(null)
 
+  const [isLoading, setLoading] = useState(false)
+  const [alert, setAlert] = useState(null)
+
   const onSubmit = async (e) => {
     e.preventDefault()
-
-    const data = {
-      email: email.current.value,
-      password: password.current.value,
+    setLoading(true)
+    try {
+      let response = await ajaxLogin(email.current.value, password.current.value)
+      let JSONRes = await response.json()
+      if (response.status === 200) {
+        localStorage.setItem('x-access-token', JSONRes.token);
+        setLoading(false)
+        if (JSONRes.user.access_level == 1) navigate('/')
+        // Untuk redirect page admin
+        else navigate('/')
+      } else {
+        setLoading(false)
+        setAlert(JSONRes.errors)
+      }
+    } catch (error) {
+      setLoading(false)
+      setAlert(error)
     }
 
-    try {
-      const url = 'https://binarstudpenfinalprojectbe-production.up.railway.app'
-      const response = await fetch(`${url}/api/v1/login`, {
-        method: 'POST',
+  }
+
+  const loginGoogle = async (response) => {
+    // const userData = jwt(response.credential)
+    setLoading(true)
+    console.log((response));
+    const url = `${process.env.REACT_APP_API_SERVER_URL}/api/v1/loginRegGoogle`
+    const res = await fetch(
+      url,
+      {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
         headers: {
-          'Content-Type': 'application/json',
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-          email: data.email,
-          password: data.password,
-        }),
-      })
-
-      const json = await response.json()
-      if (json) {
-        localStorage.setItem('x-token', json.token)
-        navigate('/')
+          credential: response.credential
+        })
       }
+    )
 
-      console.log(json)
-    } catch (error) {
-      console.log(error)
-    }
+    res.json().then(json => {
+      if (res.status === 200) {
+        console.log(json);
+        localStorage.setItem('x-access-token', json.token);
+        setLoading(false)
+        if (json.user.access_level == 1 && json.active === true) navigate('/')
+        else if(json.user.access_level == 1 && json.active === false) navigate('/please-verify')
+        // Untuk redirect page admin
+        else navigate('/')
+      } else {
+        setLoading(false)
+        setAlert(json.errors)
+      }
+    }).catch(err => {
+      setLoading(false)
+      setAlert(err)
+    })
+  }
 
-    console.log(data)
+  const handleGoogleFailure = (response) => {
+    console.log(response);
+    setLoading(false)
+    setAlert(response)
   }
 
   return (
-    <div>
+    localStorage.getItem('x-access-token') === null ? (
+      <div>
       <div
         className='bg-image p-3 mb-4'
-        style={{ backgroundImage: 'url("./assets/img/Image 24.svg")' }}
+        style={{ backgroundImage: 'url("/assets/images/image-25@2x.png")' }}
       >
         <div className='d-flex justify-content-center p-3'>
           <img
             style={{ width: 200 }}
-            src='./assets/images/logo.png'
+            src='/assets/images/logo.png'
             className='logo'
           />
         </div>
@@ -65,6 +134,9 @@ export default function Login() {
                 >
                   Login Member
                 </div>
+                {alert != null ? (<div className="alert alert-danger mt-3 mb-3" role="alert">
+                  `{alert}`
+                </div>) : ''}
                 <form action='' className='row g-3 p-3' onSubmit={onSubmit}>
                   <div className='col-12'>
                     <label htmlFor='Email' className='form-label'>
@@ -94,18 +166,19 @@ export default function Login() {
                   </div>
                   <div className='col-12 justify-content-center text-center'>
                     <div className='fw-bold'>
-                      <input
+                      {isLoading ? (<button className="btn btn-primary mb-3 disabled" type="button" disabled>
+                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                      </button>) : (<div className='text-center'><input
                         type='submit'
                         value={'Login'}
                         className='btn-login p-2 mb-3 bg-primary text-white fw-bold border-0'
                       />
-                    </div>
-                    <div className=' fw-bold'>
-                      <input
-                        type='submit'
-                        value={'Login Dengan Google'}
-                        className='btn-login p-2 mb-3 bg-primary text-white fw-bold border-0'
-                      />
+                        <GoogleOAuthProvider className="text-center" clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+                          <GoogleLogin theme='filled_black' logo_alignment='center' shape='pill' onSuccess={(credentialRes) => { loginGoogle(credentialRes) }} onError={() => { handleGoogleFailure('Error google login') }}></GoogleLogin>
+                        </GoogleOAuthProvider>
+                      </div>
+                      )}
                     </div>
                     <div className='signup-link text-center text-decoration-none'>
                       Belum memiliki akun :
@@ -121,5 +194,8 @@ export default function Login() {
         </div>
       </div>
     </div>
+    ) : (
+      <Navigate to={'/'}></Navigate>
+    )
   )
 }

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 function PopUpNotifikasi() {
   return (
-    <div className='row p-3 justify-content-center position-absolute top-0 start-50 jarak'>
-      <div className='col-sm-7'>
-        <div className='card'>
+    <div className='p-3 justify-content-center position-absolute end-0' style={{zIndex: "2"}}>
+      {/* <div className='col-sm-7'> */}
+        <div className='card shadow-lg'>
           <div className='card-body p-3'>
             <h5 className='card-title mb-1'>Notifikasi</h5>
             <div className='d-flex justify-content-center'>
@@ -15,7 +15,7 @@ function PopUpNotifikasi() {
             </div>
             <div className='d-flex justify-content-center'>
               <img
-                src='./assets/images/amplop.png'
+                src='/assets/images/amplop.png'
                 alt='amplop'
                 style={{ height: 80, width: 80 }}
               />
@@ -32,7 +32,7 @@ function PopUpNotifikasi() {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   )
 }

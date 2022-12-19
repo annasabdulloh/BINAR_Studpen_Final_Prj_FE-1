@@ -7,7 +7,7 @@ export default function HasilCheckin() {
                     bg-image
                     p-3
                     mb-4'
-        style={{ backgroundImage: 'url("./assets/img/image 25.svg")' }}
+        style={{ backgroundImage: 'url("/assets/images/image-38@2x.png")' }}
       >
         <div
           className='d-flex 
@@ -36,7 +36,7 @@ export default function HasilCheckin() {
         <div className='col-md-8 my-3'>
           <img
             style={{ width: 200 }}
-            src='./assets/images/logo.png'
+            src='/assets/images/logo.png'
             className='logo'
           />
         </div>
@@ -78,7 +78,7 @@ export default function HasilCheckin() {
                 >
                   <img
                     style={{ width: 130 }}
-                    src='./assets/images/logo.png'
+                    src='/assets/images/logo.png'
                     className='logo'
                   />
                 </div>
@@ -236,33 +236,33 @@ export default function HasilCheckin() {
                                   align-items-center
                                   p-3'
             >
-              <div className='col-md-4 my-3'>
-                <img src='/assets/img/image 37.svg'></img>
-                <div
-                  className='btn btn-primary 
+                <div className='col-lg-4 my-3'>
+                  {/* <img src='/assets/img/image 37.svg'></img> */}
+                  <button
+                    className='btn btn-primary 
                                       btn-checkin'
-                >
-                  Simpan
+                  >
+                    Simpan
+                  </button>
                 </div>
-              </div>
-              <div className='col-md-4 my-3'>
-                <img src='/assets/img/image 35.svg'></img>
-                <div
-                  className='btn btn-primary 
+                <div className='col-lg-4 my-3'>
+                  {/* <img src='/assets/img/image 35.svg'></img> */}
+                  <button
+                    className='btn btn-primary 
                                       btn-checkin'
-                >
-                  Cetak Tiket
+                  >
+                    Cetak Tiket
+                  </button>
                 </div>
-              </div>
-              <div className='col-md-4 my-3'>
-                <img src='/assets/img/image 36.svg'></img>
-                <div
-                  className='btn btn-primary
+                <div className='col-lg-4 my-3'>
+                  {/* <img src='/assets/img/image 36.svg'></img> */}
+                  <button
+                    className='btn btn-primary
                                       btn-checkin'
-                >
-                  Kirim Via E-Mail
+                  >
+                    Kirim Via E-Mail
+                  </button>
                 </div>
-              </div>
             </div>
           </div>
         </div>

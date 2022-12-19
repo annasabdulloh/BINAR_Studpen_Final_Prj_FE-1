@@ -42,7 +42,7 @@ function DetailPembelian() {
     <div>
       <div
         className='text-center bg-image p-3 mb-3'
-        style={{ backgroundImage: 'url("./assets/img/Image 25.svg")' }}
+        style={{ backgroundImage: 'url("/assets/images/image-38@2x.png")' }}
       >
         <div className='d-flex justify-content-center align-items-center h-100'>
           <div>
@@ -53,12 +53,12 @@ function DetailPembelian() {
         </div>
       </div>
       <div className='row d-flex justify-content-center align-content-center p-3'>
-        <div className='col-sm-3 p-3 pt-0'>
+        <div className='col-md-3 p-3 pt-0'>
           <div className='p-2 bg-primary text-light text-center fs-4 border-0 d-flex justify-content-center align-items-center'>
             <div className='col-md-3 my-2'>
               <img
                 className='p-2 d-flex justify-content-center'
-                src='./assets/images/Vector.svg'
+                src='/assets/images/Vector.svg'
               ></img>
             </div>
             <div className='col-md-8 my-2'>JAKARTA - BALI</div>
@@ -74,18 +74,18 @@ function DetailPembelian() {
             </div>
             <div className='p-3 fw-bold'>GA 640/GA 7640</div>
           </div>
-          <div className='p-2 bg-danger text-light fw-bold text-center fs-6 border-0 justify-content-center align-items-center bg-opacity-75'>
+          {/* <div className='p-2 bg-danger text-light fw-bold text-center fs-6 border-0 justify-content-center align-items-center bg-opacity-75'>
             Reschedule not available
-          </div>
+          </div> */}
         </div>
-        <div className='col-sm-7'>
+        <div className='col-md-7'>
           <div className='p-3 bg-secondary text-primary fw-bold text-center bg-opacity-25 fs-4 border border-secondary border-bottom-0'>
             Detail Pesanan
           </div>
           <div className='card g-3 p-5 mx-auto rounded-0 border border-secondary border-top-0'>
             <div className='text-primary fw-bold fs-4'>Booking Anda</div>
             <div className='shadow mb-5 bg-body rounded'>
-              <img className='p-3' src='./assets/images/Group 146.svg' />
+              <img className='p-3' src='/assets/images/Group 146.svg' />
               Anda login sebagai nama user
             </div>
             <div className='text-primary fw-bold fs-4'>

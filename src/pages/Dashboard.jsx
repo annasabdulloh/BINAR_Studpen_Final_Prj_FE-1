@@ -3,108 +3,53 @@ import { Link } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <>
-      <div className=' body'>
-      <div className='d-flex body'>
+      <div className='position-relative'>
         <div className='d-flex justify-content'>
-          <img
+          <img alt='banner'
             className='img-fluid'
             src='/assets/img/image 40.svg'
-            style={{ maxwidth: '100%' }}
-            style={{ width: '100%' }}
+            style={{ width: '100%', zIndex: '-1' }}
           />
         </div>
       </div>
-      <div className='position-relative'>
-        <img
-          className='img-fluid'
-          src='/assets/img/image 25.svg'
-          style={{ maxwidth: '100%' }}
-        />
-        <div className='row text-center'>
-          <div
-            className='col position-absolute top-50 start-50 translate-middle'
-            style={{ display: 'inline-block' }}
-          >
-            <div className='row mx-auto'>
-              <div className='col-12 col-lg-6'>
-                <Link className='active' to='/jadwalpenerbangan'>
-                  <button
-                    className='btn-kiri text-light fw-bold'
-                    style={{ maxwidth: '100%' }}
-                  >
+      <div className='position-relative' style={{ backgroundImage: "url('/assets/images/image-38@2x.png')" }}>
+        {/* <img alt='spliter' className='img-fluid' src='/assets/images/image-38@2x.png' width={"100%"} /> */}
+        <div className='text-center'>
+          <div className=''>
+            <div className="row pt-5 pb-5">
+              <div className="col-md-6 text-md-end mb-2 mt-2">
+                <Link className='active' to='/login'>
+                  <button className='btn btn-kiri text-light fw-bold'>
                     LIHAT PENERBANGAN
                   </button>
                 </Link>
               </div>
-              <div className='col-12 col-lg-6'>
-                <Link className='active' to='/detailpembelian'>
-                  <button
-                    className='btn-kanan text-light fw-bold'
-                    style={{ maxwidth: '100%' }}
-                  >
+              <div className="col-md-6 text-md-start mb-2 mt-2">
+                <Link className='active' to='/login'>
+                  <button className='btn btn-kanan text-light fw-bold'>
                     PESAN TIKET
                   </button>
                 </Link>
               </div>
             </div>
-
-            {/* <Link className='active' to='/login'>
-              <button
-                className='btn-kiri text-light fw-bold'
-                style={{ maxwidth: '100%' }}
-              >
-        <img className='img-fluid' src='/assets/img/image 25.svg' />
-        <div className='row text-center'>
-          <div className='col col-sm-12 position-absolute top-50 start-50 translate-middle'>
-            <Link className='active' to='/login'>
-              <button className='btn-kiri text-light fw-bold'>
-                LIHAT PENERBANGAN
-              </button>
-            </Link>
-            <Link className='active' to='/login'>
-              <button
-                className='btn-kanan text-light fw-bold'
-                style={{ maxwidth: '100%' }}
-              >
-                PESAN TIKET
-              </button>
-            </Link> */}
-              <button className='btn-kanan text-light fw-bold'>
-                PESAN TIKET
-              </button>
-            </Link>
           </div>
         </div>
       </div>
-      <div className='position-relative more'>
-        <img className='img-fluid' src='/assets/img/travel-safely 2.svg'></img>
-        <div
-          className='position-absolute top-50 start-50 translate-middle text-center'
-          // style={{ maxwidth: '100%', height: 'auto' }}
-        >
-          <img
-            className='img-head img-fluid pesawat'
-            src='/assets/img/Group 10.svg'
-          ></img>
-          <h2 className='text-light fw-bold text-more mb-3'>
-            kami mengerti anda
-            <br /> karena kami peduli
-          </h2>
-          <button type='button' className='px-5 btn btn-outline-primary'>
-        <img
+      <div className='pt-3 pb-3 position-relative more' style={{ backgroundImage: "url('/assets/img/travel-safely 1.svg')" }}>
+        {/* <img alt='banner-mid'
           className='img-fluid logo'
-          src='/assets/img/travel-safely 1.svg'
-        ></img>
-        <div className='position-absolute top-50 start-50 translate-middle text-center '>
-          <img
+          src='/assets/img/travel-safely 1.svg' width={"100%"}
+        ></img> */}
+        <div className='text-center '>
+          <img alt='icon'
             className='img-fluid pesawat'
             src='/assets/img/Group 10.svg'
           ></img>
-          <h1 className='text-light fw-bold'>
+          <h1 className='text-dark fw-bold'>
             kami mengerti anda
             <br /> karena kami peduli
           </h1>
-          <button className='btn btn-transparent border text-light'>
+          <button className='btn btn-transparent border-dark text-dark'>
             Selengkapnya
           </button>
         </div>
@@ -114,7 +59,7 @@ const Dashboard = () => {
           <div className='col-md-4 mt-2'>
             <div className='card text-center text-light'>
               <img src='/assets/img/image 1.svg'></img>
-              <div className='card-body bg-choose'>
+              <div className='card-body bg-primary'>
                 <p>Pilot, Cabin Crew</p>
               </div>
             </div>
@@ -122,7 +67,7 @@ const Dashboard = () => {
           <div className='col-md-4 mt-2'>
             <div className='card text-center text-light'>
               <img src='/assets/img/image 3.svg'></img>
-              <div className='card-body bg-choose'>
+              <div className='card-body bg-secondary'>
                 <p>Our Healthy Food</p>
               </div>
             </div>
@@ -130,7 +75,7 @@ const Dashboard = () => {
           <div className='col-md-4 mt-2'>
             <div className='card text-center text-light'>
               <img src='/assets/img/image 2.svg'></img>
-              <div className='card-body bg-choose'>
+              <div className='card-body bg-secondary'>
                 <p>Passenger Comfort</p>
               </div>
             </div>
@@ -187,7 +132,7 @@ const Dashboard = () => {
             MyAIRFARE adalah maskapai penerbangan Indonesia <br></br>yang
             bergabung dengan SkyTeam
           </p>
-          <button className='btn btn-more-1 border-primary text-primary mt-5'>
+          <button className='btn btn-transparent border-primary text-primary mt-5'>
             selengkapnya
           </button>
         </div>
@@ -199,7 +144,6 @@ const Dashboard = () => {
         <div className='row mt-5'>
           <div className='col-lg-3 col-md-6 mt-3'>
             <div className='card'>
-              <img src='/assets/img/image 15.jpg' className='card-img'></img>
               <img src='/assets/img/image 15.svg' className='card-img'></img>
               <div className='card-img-overlay mb-5'>
                 <h5 className='card-text'>Profil Perusahaan</h5>

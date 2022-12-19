@@ -5,7 +5,7 @@ function DetailPembelianTerisi() {
     <div>
       <div
         className='text-center bg-image p-3 mb-3'
-        style={{ backgroundImage: 'url("./assets/img/Image 25.svg")' }}
+        style={{ backgroundImage: 'url("./assets/images/image-38@2x.png")' }}
       >
         <div className='d-flex justify-content-center align-items-center h-100'>
           <div>

@@ -24,6 +24,7 @@ import Pribadi from './pages/Profile/Pribadi'
 import Password from './pages/Profile/Password'
 import { ProtectedRoute } from './components/Protected';
 import VerifFirst from './pages/Verifikasi/verifyFirst';
+import MyChart from './pages/MyChart';
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/jadwalpenerbangan' element={<ProtectedRoute active={false}><Jadwal /></ProtectedRoute>} />
         <Route path='/' element={<ProtectedRoute active={false}><Dashboard /></ProtectedRoute>} />
-        <Route path='/please-verify' element={<VerifFirst></VerifFirst>}/>
+        <Route path='/please-verify' element={<VerifFirst></VerifFirst>} />
 
 
         <Route path='/checkin' element={<ProtectedRoute><Checkin /></ProtectedRoute>} />
@@ -65,7 +66,9 @@ function App() {
         <Route path="/my-ticket" element={<ProtectedRoute><HistoryMyTicket /></ProtectedRoute>} />
         <Route path='/profile' element={<ProtectedRoute><Pribadi /></ProtectedRoute>} />
         <Route path='/settingPassword' element={<ProtectedRoute><Password /></ProtectedRoute>} />
+        <Route path='/my-chart' element={<ProtectedRoute><MyChart /></ProtectedRoute>} />
 
+       
       </Routes>
       <Footer />
     </BrowserRouter>

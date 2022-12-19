@@ -50,8 +50,6 @@ export default function Login() {
         localStorage.setItem('x-access-token', JSONRes.token);
         setLoading(false)
         if (JSONRes.user.access_level == 1) navigate('/')
-        // Untuk redirect page admin
-        else navigate('/')
       } else {
         setLoading(false)
         setAlert(JSONRes.errors)
@@ -92,8 +90,6 @@ export default function Login() {
         setLoading(false)
         if (json.user.access_level == 1 && json.active === true) navigate('/')
         else if(json.user.access_level == 1 && json.active === false) navigate('/please-verify')
-        // Untuk redirect page admin
-        else navigate('/')
       } else {
         setLoading(false)
         setAlert(json.errors)

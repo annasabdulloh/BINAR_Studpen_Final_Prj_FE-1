@@ -23,7 +23,6 @@ function VerifGagal() {
               <div className='d-flex justify-content-center mb-3'>
                 <div
                   className='text-danger text-center'
-                  style={{ width: 271, height: 36 }}
                 >
                   <h3 className=''>Terjadi Kesalahan</h3>
                 </div>

@@ -39,7 +39,7 @@ function Password() {
               </li>
               <li className='nav-item'>
                 <Link
-                  to='/settingPassword'
+                  to='/setting-password'
                   className='nav-link active text-primary'
                   aria-current='true'
                 >

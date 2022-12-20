@@ -24,7 +24,6 @@ function VerifFirst() {
               <div className='d-flex justify-content-center mb-3'>
                 <div
                   className='text-primary text-center'
-                  style={{ height: 36 }}
                 >
                   <h3 className=''>Mohon Untuk Memverifikasi Akun Anda Terlebih Dahulu</h3>
                 </div>

@@ -4,13 +4,13 @@
 
 // ==========================================================================
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, Navigate } from 'react-router-dom'
 import '../css/login.css'
 // const dotenv = require('dotenv').config();
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
-import jwt from 'jwt-decode'
+import { useSelector } from 'react-redux';
 
 async function ajaxLogin(email, password) {
   const data = {
@@ -39,6 +39,7 @@ export default function Login() {
 
   const [isLoading, setLoading] = useState(false)
   const [alert, setAlert] = useState(null)
+  const { getHistoryData } = useSelector(state => state.historyReducer)
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -49,7 +50,12 @@ export default function Login() {
       if (response.status === 200) {
         localStorage.setItem('x-access-token', JSONRes.token);
         setLoading(false)
-        if (JSONRes.user.access_level == 1) navigate('/')
+        console.log(JSONRes.user.access_level);
+        if (JSONRes.user.active == true) {
+          console.log(getHistoryData);
+          if(getHistoryData)  navigate(getHistoryData)
+          else  navigate('/')
+        }
       } else {
         setLoading(false)
         setAlert(JSONRes.errors)
@@ -60,6 +66,10 @@ export default function Login() {
     }
 
   }
+
+  useEffect(() => {
+    console.log(getHistoryData);
+  })
 
   const loginGoogle = async (response) => {
     // const userData = jwt(response.credential)
@@ -88,8 +98,11 @@ export default function Login() {
         console.log(json);
         localStorage.setItem('x-access-token', json.token);
         setLoading(false)
-        if (json.user.access_level == 1 && json.active === true) navigate('/')
-        else if(json.user.access_level == 1 && json.active === false) navigate('/please-verify')
+        if (json.user.active === true) {
+          if(getHistoryData) navigate(getHistoryData)
+          else  navigate('/')
+        }
+        else if(json.active === false) window.location.href = '/please-verify'
       } else {
         setLoading(false)
         setAlert(json.errors)

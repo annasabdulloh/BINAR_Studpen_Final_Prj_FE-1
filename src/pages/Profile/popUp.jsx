@@ -37,7 +37,7 @@ function PopUp() {
                             My Profile
                         </div>
                     </Link>
-                    <Link to="/settingPassword" className='text-decoration-none'>
+                    <Link to="/setting-password" className='text-decoration-none'>
                         <div className='w-100 p-1 fw-bold'>
                             Change Password
                         </div>

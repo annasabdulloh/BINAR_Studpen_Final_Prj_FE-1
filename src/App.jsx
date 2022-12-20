@@ -26,6 +26,9 @@ import { ProtectedRoute } from './components/Protected';
 import VerifFirst from './pages/Verifikasi/verifyFirst';
 import MyChart from './pages/MyChart';
 import PageCariTiketPP from './pages/CariTiket/PageCariTiketPP';
+import Page404 from './pages/Page404';
+
+// Testing
 
 function App() {
   return (
@@ -58,19 +61,20 @@ function App() {
 
 
         <Route path='/checkin' element={<ProtectedRoute><Checkin /></ProtectedRoute>} />
-        <Route path='/hasilcheckin' element={<ProtectedRoute><HasilCheckin /></ProtectedRoute>} />
+        <Route path='/checkin-result' element={<ProtectedRoute><HasilCheckin /></ProtectedRoute>} />
         <Route path='/tentangkami' element={<ProtectedRoute><TentangKami /></ProtectedRoute>} />
-        <Route path='/verif' element={<ProtectedRoute><Verif /></ProtectedRoute>} />
-        <Route path='/verifikasigagal' element={<ProtectedRoute><VerifGagal /></ProtectedRoute>} />
-        <Route path='/detailpembelian' element={<ProtectedRoute><DetailPembelian /></ProtectedRoute>} />
-        <Route path='/notifikasiada' element={<ProtectedRoute><NotifikasiAda /></ProtectedRoute>} />
+        <Route path='/verif' element={<Verif />} />
+        <Route path='/verif-failed' element={<VerifGagal />} />
+        <Route path='/purchase-detail' element={<ProtectedRoute><DetailPembelian /></ProtectedRoute>} />
+        <Route path='/notifications' element={<ProtectedRoute><NotifikasiAda /></ProtectedRoute>} />
         <Route path="/my-ticket" element={<ProtectedRoute><HistoryMyTicket /></ProtectedRoute>} />
         <Route path='/profile' element={<ProtectedRoute><Pribadi /></ProtectedRoute>} />
-        <Route path='/settingPassword' element={<ProtectedRoute><Password /></ProtectedRoute>} />
+        <Route path='/setting-password' element={<ProtectedRoute><Password /></ProtectedRoute>} />
         <Route path='/my-chart' element={<ProtectedRoute><MyChart /></ProtectedRoute>} />
-        <Route path='/caritiket' element={<ProtectedRoute><PageCariTiketPP /></ProtectedRoute>}/>
+        <Route path='/search-ticket' element={<ProtectedRoute><PageCariTiketPP /></ProtectedRoute>}/>
 
-       
+        <Route path='*' element={<ProtectedRoute active={false}><Page404></Page404></ProtectedRoute>} />
+
       </Routes>
       <Footer />
     </BrowserRouter>

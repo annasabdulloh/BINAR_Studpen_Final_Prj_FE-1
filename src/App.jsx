@@ -27,6 +27,7 @@ import VerifFirst from './pages/Verifikasi/verifyFirst';
 import MyChart from './pages/MyChart';
 import PageCariTiketPP from './pages/CariTiket/PageCariTiketPP';
 import Page404 from './pages/Page404';
+import DetailTransaksi from './pages/DetailTransaksi';
 
 // Testing
 
@@ -58,20 +59,20 @@ function App() {
         <Route path='/jadwalpenerbangan' element={<ProtectedRoute active={false}><Jadwal /></ProtectedRoute>} />
         <Route path='/' element={<ProtectedRoute active={false}><Dashboard /></ProtectedRoute>} />
         <Route path='/please-verify' element={<VerifFirst></VerifFirst>} />
-
+        <Route path='/search-ticket' element={<ProtectedRoute active={false}><PageCariTiketPP /></ProtectedRoute>}/>
+        <Route path='/purchase-detail' element={<ProtectedRoute active={false}><DetailPembelian /></ProtectedRoute>} />
 
         <Route path='/checkin' element={<ProtectedRoute><Checkin /></ProtectedRoute>} />
         <Route path='/checkin-result' element={<ProtectedRoute><HasilCheckin /></ProtectedRoute>} />
         <Route path='/tentangkami' element={<ProtectedRoute><TentangKami /></ProtectedRoute>} />
         <Route path='/verif' element={<Verif />} />
         <Route path='/verif-failed' element={<VerifGagal />} />
-        <Route path='/purchase-detail' element={<ProtectedRoute><DetailPembelian /></ProtectedRoute>} />
+        <Route path='/detail-transaction' element={<ProtectedRoute><DetailTransaksi /></ProtectedRoute>} />
         <Route path='/notifications' element={<ProtectedRoute><NotifikasiAda /></ProtectedRoute>} />
         <Route path="/my-ticket" element={<ProtectedRoute><HistoryMyTicket /></ProtectedRoute>} />
         <Route path='/profile' element={<ProtectedRoute><Pribadi /></ProtectedRoute>} />
         <Route path='/setting-password' element={<ProtectedRoute><Password /></ProtectedRoute>} />
         <Route path='/my-chart' element={<ProtectedRoute><MyChart /></ProtectedRoute>} />
-        <Route path='/search-ticket' element={<ProtectedRoute><PageCariTiketPP /></ProtectedRoute>}/>
 
         <Route path='*' element={<ProtectedRoute active={false}><Page404></Page404></ProtectedRoute>} />
 

@@ -4,13 +4,13 @@
 
 // ==========================================================================
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import "../css/login.css";
 // const dotenv = require('dotenv').config();
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { GoogleLogin } from "@react-oauth/google";
-// import jwt from 'jwt-decode'
+import jwt from "jwt-decode";
 
 async function ajaxLogin(email, password) {
   const data = {

@@ -24,7 +24,6 @@ function Verif() {
               <div className='d-flex justify-content-center mb-3'>
                 <div
                   className='text-primary text-center'
-                  style={{ height: 36 }}
                 >
                   <h3 className=''>Verifikasi Email Kamu</h3>
                 </div>

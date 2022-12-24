@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { getUserdata } from '../actions/userAction';
+import { getHistoryData } from '../actions/history';
+import Loading from '../pages/Loading';
+
 // import '../../index.css';
 // const dotenv = require('dotenv').config()
 
@@ -53,7 +56,7 @@ function ProtectedRoute({ children, active = true, admin = false }) {
                         console.log("Ini error : ", json);
                         destroyToken(token);
                         setNav('/login')
-
+                        dispatch(getHistoryData(window.location.pathname))
                     } else {
                         if (admin) {
                             if (json.user.access_level == 0) {
@@ -63,10 +66,12 @@ function ProtectedRoute({ children, active = true, admin = false }) {
                                 dispatch(getUserdata(json.user));
                                 setNav('/')
                             }
+                            dispatch(getHistoryData(null))
                         } else {
                             console.log('data baru didapaT', loopRender);
                             dispatch(getUserdata(json.user));
                             setNav('')
+                            dispatch(getHistoryData(null))
                         }
                     }
                     // if(loopRender === 0){
@@ -78,21 +83,24 @@ function ProtectedRoute({ children, active = true, admin = false }) {
                     console.log(err);
                     destroyToken(token);
                     setNav('/login')
+                    dispatch(getHistoryData(window.location.pathname))
                 })
             }).catch(err => {
                 console.log(err);
                 destroyToken(token);
                 setNav('/login')
+                dispatch(getHistoryData(window.location.pathname))
             })
         } catch (error) {
             console.log(error);
             setNav('/login')
+            dispatch(getHistoryData(window.location.pathname))
         }
         console.log(navigate);
     }, [dispatch])
     console.log(navigate);
     return (
-        navigate === null ? '' : (
+        navigate === null ? <Loading></Loading> : (
             navigate === '' ? children : (active ? <Navigate to={navigate} /> : children)
         )
     )

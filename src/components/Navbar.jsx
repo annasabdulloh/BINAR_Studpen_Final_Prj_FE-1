@@ -94,31 +94,31 @@ const Navbar = () => {
           // style={{ marginLeft: '170px', marginRight: '10px' }}
           >
             <li className='nav-item active'>
-              <Link className='nav-link' to='/'>
+              <a className='nav-link' href='/'>
                 PESAWAT
-              </Link>
+              </a>
             </li>
             <li className='nav-item active'>
-              <Link className='nav-link' to='/checkin'>
+              <a className='nav-link' href='/checkin'>
                 CHECK IN
-              </Link>
+              </a>
             </li>
             <li className='nav-item active'>
-              <Link className='nav-link' to='/tentangkami'>
+              <a className='nav-link' href='/tentangkami'>
                 TENTANG KAMI
-              </Link>
+              </a>
             </li>
             <li className='nav-item active'>
-              <Link className='nav-link' to='/my-ticket'>
+              <a className='nav-link' href='/my-ticket'>
                 MY TIKCET
-              </Link>
+              </a>
             </li>
           </ul>
 
           {getUserData ? (
             <ul className='navbar-nav ms-auto'>
               <li>
-                <a className='nav-link' href='#'>
+                <a className='nav-link' href='/my-chart'>
                   <img src='/assets/images/cart.png' alt='' />
                 </a>
               </li>
@@ -129,7 +129,7 @@ const Navbar = () => {
               </li>
               <li id='icon-profile' className=''>
                 <a className='nav-link rounded-circle' href='#' onClick={handleClickProfile}>
-                  {getUserData.email} <img width={"40px"} src='/assets/images/user.png' alt='' />
+                  {getUserData.email} <img width={"40px"} src={process.env.REACT_APP_API_SERVER_URL + getUserData.photo} alt='' />
                 </a>
               </li>
             </ul>
@@ -138,23 +138,23 @@ const Navbar = () => {
               <li id='btn-no-login'>
                 <div className="row">
                   <div className="col-sm-6 text-sm-end">
-                    <Link className='nav-link pe-0' to='/login'>
+                    <a className='nav-link pe-0' href='/login'>
                       <button
                         className='btn btn-secondary w-100'
                       >
                         Login
                       </button>
-                    </Link>
+                    </a>
                   </div>
                   <div className="col-sm-6 text-sm-start">
-                    <Link className='nav-link ps-0' to='/register'>
+                    <a className='nav-link ps-0' href='/register'>
                       <button
                         className='btn btn-primary w-100'
                         style={{ marginRight: '10px' }}
                       >
                         Daftar
                       </button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </li>

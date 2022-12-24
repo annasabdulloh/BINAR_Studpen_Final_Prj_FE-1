@@ -25,7 +25,7 @@ function Pribadi() {
           <div className='card-body p-3'>
             <h5 className='card-title mb-3'>
               <img
-                src='./assets/images/user.png'
+                src='/assets/images/user.png'
                 alt='user'
                 style={{ width: 50, height: 50 }}
               />
@@ -55,7 +55,7 @@ function Pribadi() {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to='/settingPassword' className='nav-link text-primary'>
+                <Link to='/setting-password' className='nav-link text-primary'>
                   Password
                 </Link>
               </li>

@@ -8,6 +8,7 @@ import { Button, Form, Button as BsButton } from 'react-bootstrap';
 import './PageCariTiketPP.css';
 import Select from 'react-select'
 import Loading from '../Loading';
+import { useNavigate } from 'react-router-dom';
 
 const splitAirportName = (ticket) => {
   let airportsF = []
@@ -96,7 +97,10 @@ const PageCariTiketPP = () => {
   // Animasi kontrol & final result data
   const [dataLoading, setDataLoading] = useState(false)
   const [tickets, setTickets] = useState(null)
+  const navigate = useNavigate()
 
+  let selectedTicketF = null
+  let selectedTicketL = null
   // const options = [
   //   { value: 'chocolate', label: 'Chocolate' },
   //   { value: 'strawberry', label: 'Strawberry' },
@@ -113,6 +117,7 @@ const PageCariTiketPP = () => {
       target.classList.remove('ticket-active')
     })
     evt.target.parentElement.classList.add('ticket-active')
+    selectedTicketF = evt.target.value
   }
 
   const handleClickTicket2 = (evt) => {
@@ -120,6 +125,7 @@ const PageCariTiketPP = () => {
       target.classList.remove('ticket-active')
     })
     evt.target.parentElement.classList.add('ticket-active')
+    selectedTicketL = evt.target.value
   }
 
   const handleSubmit = (evt) => {
@@ -147,6 +153,21 @@ const PageCariTiketPP = () => {
     setLoading(true)
     setCounter(0)
     setTickets(null)
+  }
+
+  const handleNextButton = () => {
+    let chairs = []
+    let tickets = []
+    if(selectedTicketF !== null) {
+      chairs.push(document.getElementById(`chair_${selectedTicketF}`).value)
+      tickets.push(selectedTicketF)
+    }
+    if(selectedTicketL !== null) {
+      chairs.push(document.getElementById(`chair_${selectedTicketL}`).value)
+      tickets.push(selectedTicketL)
+    }
+    localStorage.setItem('detail-d', JSON.stringify({tickets, chairs}))
+    if(tickets.length > 0) navigate('/purchase-detail')
   }
 
   useEffect(() => {
@@ -337,7 +358,6 @@ const PageCariTiketPP = () => {
           <>
             <section>
               <div className="container p-4">
-                {console.log(tickets)}
                 {tickets !== null ? (
                   <div className="row shadow mb-5 bg-body rounded">
                     {typeTrip === "single" ? (
@@ -386,7 +406,7 @@ const PageCariTiketPP = () => {
                     {tickets.go.map((ticket, index) => {
                       return (
                         <label key={index} htmlFor={`go-${ticket.id}`} className="row ticket-go shadow p-3 mb-3 bg-body rounded">
-                          <input type="radio" className='d-none' name="go" id={`go-${ticket.id}`} onChange={handleClickTicket} />
+                          <input type="radio" className='d-none' name="go" id={`go-${ticket.id}`} onChange={handleClickTicket} value={ticket.id} />
                           <div className="col-lg-3 d-flex">
                             <img width={"200px"} className="my-auto mx-auto" alt="" src={`${process.env.REACT_APP_API_SERVER_URL}${ticket.logo}`} />
                           </div>
@@ -406,7 +426,7 @@ const PageCariTiketPP = () => {
                           </div>
                           <div className="col-lg-1 mt-3">
                             <label htmlFor={'chair_' + ticket.id}>Pilih Kursi : </label>
-                            <select id={'chair_' + ticket.id} className="form-select" style={{height: "unset"}}>
+                            <select id={'chair_' + ticket.id} className="form-select" style={{ height: "unset" }}>
                               {ticket.available.map((chair, index) => {
                                 return (
                                   <option key={index} value={chair.chair_number
@@ -431,7 +451,7 @@ const PageCariTiketPP = () => {
                       tickets.return_flight.map((ticket, index) => {
                         return (
                           <label key={index} htmlFor={`return-${ticket.id}`} className="row ticket-return shadow p-3 mb-3 bg-body rounded">
-                            <input type="radio" className='d-none' name="return" id={`return-${ticket.id}`}onChange={handleClickTicket2} />
+                            <input type="radio" className='d-none' name="return" id={`return-${ticket.id}`} onChange={handleClickTicket2} value={ticket.id} />
                             <div className="col-lg-3 d-flex">
                               <img width={"200px"} className="my-auto mx-auto" alt="" src={`${process.env.REACT_APP_API_SERVER_URL}${ticket.logo}`} />
                             </div>
@@ -451,7 +471,7 @@ const PageCariTiketPP = () => {
                             </div>
                             <div className="col-lg-1 mt-3">
                               <label htmlFor={'chair_' + ticket.id}>Pilih Kursi : </label>
-                              <select id={'chair_' + ticket.id} className="form-select" style={{height: "unset"}}>
+                              <select id={'chair_' + ticket.id} className="form-select" style={{ height: "unset" }}>
                                 {ticket.available.map((chair, index) => {
                                   return (
                                     <option key={index} value={chair.chair_number
@@ -468,9 +488,13 @@ const PageCariTiketPP = () => {
                           </label>
                         )
                       })
+
                     ) : ''}
 
                   </div>
+                </div>
+                <div className="container p-5">
+                  <button className="btn btn-primary w-100" onClick={handleNextButton}> Lanjutkan </button>
                 </div>
               </section>
             )}

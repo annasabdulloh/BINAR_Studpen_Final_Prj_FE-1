@@ -109,18 +109,18 @@ const Navbar = () => {
               </a>
             </li>
             <li className='nav-item active'>
-              <Link className='nav-link' to='/my-ticket'>
+              <a className='nav-link' href='/my-ticket'>
                 MY TIKCET
-              </Link>
+              </a>
             </li>
           </ul>
 
           {getUserData ? (
             <ul className='navbar-nav ms-auto'>
               <li>
-                <Link className='nav-link' to='/my-chart'>
+                <a className='nav-link' href='/my-chart'>
                   <img src='/assets/images/cart.png' alt='' />
-                </Link>
+                </a>
               </li>
               <li>
                 <a className='nav-link' onClick={handleClickNotif}>

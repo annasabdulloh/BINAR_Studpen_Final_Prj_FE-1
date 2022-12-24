@@ -6,7 +6,7 @@ import Loading from "../Loading";
 // import "../../css/History/HistoryMenungguPembayaran.css";
 // import "./responsiveHistory.css";
 
-const userToken = localStorage.getItem('x-access-token')
+let userToken = localStorage.getItem('x-access-token')
 
 const ajaxGetAllTrx = async () => {
   let response = await fetch(`${process.env.REACT_APP_API_SERVER_URL}/api/v1/user-transactions`, {
@@ -83,6 +83,8 @@ const HistoryMyTicket = () => {
   const [msg, setMsg] = useState(null)
   const [pyLoading, setPayLoading] = useState(false)
   const navigate = useNavigate()
+  
+  userToken = localStorage.getItem('x-access-token')
 
   const handleDetail = (trxId) => {
     localStorage.setItem('trx-id', trxId)

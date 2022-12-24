@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 
-const userToken = localStorage.getItem('x-access-token')
+let userToken = localStorage.getItem('x-access-token')
 
 const ajaxGetCart = async () => {
     const url = `${process.env.REACT_APP_API_SERVER_URL}/api/v1/wait-list`
@@ -43,6 +43,9 @@ export default function MyChart() {
     const [counter, setCounter] = useState(0)
     const [msg, setMsg] = useState(null)
     const navigate = useNavigate()
+
+    userToken = localStorage.getItem('x-access-token')
+
 
     const handleDelete = async (trxId) => {
         setLoading(true)

@@ -36,6 +36,8 @@ function DetailTransaksi() {
   const [data, setData] = useState(null)
   const [counter, setCounter] = useState(0)
 
+  userToken = localStorage.getItem('x-access-token')
+
   let trxId = localStorage.getItem('trx-id')
 
   const handleDelete = () => {

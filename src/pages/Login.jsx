@@ -102,7 +102,7 @@ export default function Login() {
           if(getHistoryData) navigate(getHistoryData)
           else  navigate('/')
         }
-        else if(json.active === false) window.location.href = '/please-verify'
+        else if(json.user.active === false) navigate('/please-verify')
       } else {
         setLoading(false)
         setAlert(json.errors)

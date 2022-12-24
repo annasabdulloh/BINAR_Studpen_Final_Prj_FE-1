@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 // import './style.css'
+import { useSelector } from 'react-redux';
 
 function Verif() {
+  const { getHistoryData } = useSelector(state => state.historyReducer)
   return (
     <div>
       <div></div>
@@ -38,7 +40,7 @@ function Verif() {
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to='/'>
+                  <Link to={getHistoryData ? getHistoryData : '/'}>
                     <button className='btn btn-primary'>
                       Kembali ke Dashboard
                     </button>
@@ -49,7 +51,7 @@ function Verif() {
                 <div className='text-center' style={{ width: 506, height: 60 }}>
                   <p>
                     Jika button di atas tidak berfungsi, anda juga bisa klik{' '}
-                    <Link to='#' className='text-primary'>
+                    <Link to={getHistoryData ? getHistoryData : '/'} className='text-primary'>
                       disini
                     </Link>
                   </p>

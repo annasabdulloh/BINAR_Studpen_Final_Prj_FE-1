@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 // import '/style.css'
+import { useSelector } from 'react-redux';
 
 function VerifGagal() {
+  const { getHistoryData } = useSelector(state => state.historyReducer)
   return (
     <div>
       <div className='row justify-content-center p-3'>
@@ -38,7 +40,7 @@ function VerifGagal() {
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to='/' className='btn btn-danger'>
+                  <Link to={getHistoryData ? getHistoryData : '/'} className='btn btn-danger'>
                     Kembali ke Halaman
                   </Link>
                 </div>

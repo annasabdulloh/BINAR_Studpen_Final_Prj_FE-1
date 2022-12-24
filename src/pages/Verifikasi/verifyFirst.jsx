@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 // import './style.css'
 
 function VerifFirst() {
+  const { getHistoryData } = useSelector(state => state.historyReducer)
+
   return (
     <div>
       <div></div>
@@ -37,7 +40,7 @@ function VerifFirst() {
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to='/'>
+                  <Link to={getHistoryData ? getHistoryData : '/'}>
                     <button className='btn btn-primary'>
                       Kembali ke Terakhir Dibuka
                     </button>

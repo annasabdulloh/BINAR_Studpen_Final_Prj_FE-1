@@ -20,8 +20,7 @@ import Jadwal from "./pages/Jadwal/JadwalPenerbangan";
 import NotifikasiAda from "./pages/Notifikasi/NotifAda";
 // import History from './pages/History'
 import HistoryMyTicket from "./pages/History/HistoryMyTicket";
-import Pribadi from "./pages/Profile/Pribadi";
-import Password from "./pages/Profile/Password";
+import Pribadi from "./pages/Profile/EditProfile";
 import { ProtectedRoute } from "./components/Protected";
 import VerifFirst from "./pages/Verifikasi/verifyFirst";
 import MyChart from "./pages/MyChart";
@@ -142,14 +141,6 @@ function App() {
           element={
             <ProtectedRoute>
               <Pribadi />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/settingPassword"
-          element={
-            <ProtectedRoute>
-              <Password />
             </ProtectedRoute>
           }
         />

@@ -109,7 +109,8 @@ function ProtectedRoute({ children, active = true, admin = false }) {
 
 ProtectedRoute.propTypes = {
     children: PropTypes.node.isRequired,
-    // active: PropTypes.node.isRequired
+    active: PropTypes.node.isRequired,
+    admin: PropTypes.node.isRequired
 }
 
 export { ProtectedRoute };

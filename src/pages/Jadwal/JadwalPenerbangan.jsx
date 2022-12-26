@@ -1,9 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom'
 import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
-import { LocalizationProvider, DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { Button, Form, Button as BsButton } from 'react-bootstrap';
 import Select from 'react-select'
 import Loading from '../Loading';
 
@@ -80,13 +78,11 @@ const getSchedule = (params, callback, callbackLoading) => {
 
 // filter jadwal penerbangan
 function Jadwal() {
-  const [rectangleDateTimePickerValue, setRectangleDateTimePickerValue] = useState(null);
-  const [rectangleDateTimePicker1Value, setRectangleDateTimePicker1Value] = useState(null);
   const [isLoaading, setLoading] = useState(false)
   const [airports, setAirports] = useState({ airportsF: [], airportsL: [] })
   const [counter, setCounter] = useState(0)
 
-  const [typeTrip, setTypeTrip] = useState("single")
+  const typeTrip = "single"
   const [fromAirport, setFrom] = useState(null)
   const [destAirport, setDest] = useState(null)
   const dateAir = useRef(null)
@@ -102,7 +98,7 @@ function Jadwal() {
       destAirport,
       dateAir.current.value);
 
-    let schedule = getSchedule({
+    getSchedule({
       typeTrip, fromAirport,
       destAirport,
       dateAir,
@@ -222,7 +218,7 @@ function Jadwal() {
             ) : (
               <div className="row w-100">
                 <div className="col-12" style={{overflowX: "auto"}}>
-                  <table class="table table-striped bg-white rounded shadow">
+                  <table className="table table-striped bg-white rounded shadow">
                     <thead className='table-primary'>
                       <tr>
                         <th scope='col'>Flight</th>

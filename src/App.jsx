@@ -1,4 +1,5 @@
 // import logo from './logo.svg';
+import React from "react";
 import "./App.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -56,7 +57,7 @@ function App() {
         setNotifData(oldData => [...oldData, message])
       }
     });
-  }, [socket, notifications])
+  }, [notifications])
   // =======================================================================
 
   return (

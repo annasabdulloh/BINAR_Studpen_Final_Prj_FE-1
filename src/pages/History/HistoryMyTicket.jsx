@@ -1,6 +1,7 @@
-// import { Button, Icon } from "@mui/material";
+// import { Button, Icon } from "@mui/material"
+import React from 'react'
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { getHeapSnapshot } from "v8";
 import Loading from "../Loading";
 // import "../../css/History/HistoryMenungguPembayaran.css";
@@ -180,7 +181,7 @@ const HistoryMyTicket = () => {
         tab.classList.remove('border-bottom')
         tab.classList.remove('border-primary')
       } catch {
-
+        ''
       }
     })
     document.querySelector(`#content-${idTarget}`).classList.remove('d-none')
@@ -203,7 +204,7 @@ const HistoryMyTicket = () => {
             <div className="col-12">
               <div className="row">
                 <div className="col-4">
-                  <button className="btn row" onClick={function (evt) { handleClickTab('tab-wait-payment') }}>
+                  <button className="btn row" onClick={function () { handleClickTab('tab-wait-payment') }}>
                     <div className="col-12">
                       <img
                         className=""
@@ -217,7 +218,7 @@ const HistoryMyTicket = () => {
                   </button>
                 </div>
                 <div className="col-4">
-                  <button className="btn row" onClick={function (evt) { handleClickTab('tab-wait-depart') }}>
+                  <button className="btn row" onClick={function () { handleClickTab('tab-wait-depart') }}>
                     <div className="col-12">
                       <img
                         className=""
@@ -231,7 +232,7 @@ const HistoryMyTicket = () => {
                   </button>
                 </div>
                 <div className="col-4">
-                  <button className="btn row" onClick={function (evt) { handleClickTab('tab-expired-depart') }}>
+                  <button className="btn row" onClick={function () { handleClickTab('tab-expired-depart') }}>
                     <div className="col-12">
                       <img
                         className=""

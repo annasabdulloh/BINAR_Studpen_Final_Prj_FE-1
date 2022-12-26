@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -64,6 +65,7 @@ export default function Checkin() {
 
   const qrCheckinHandler = async (decodedText, decodedResult) => {
     try {
+      console.log(decodedResult);
       const aksestoken = localStorage.getItem("x-access-token");
       const url = `${process.env.REACT_APP_API_SERVER_URL}`;
       const response = await fetch(`${url}/api/v1/checkin-auto`, {

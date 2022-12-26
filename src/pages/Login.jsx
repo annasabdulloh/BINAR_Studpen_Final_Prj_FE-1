@@ -3,7 +3,7 @@
 // Sistem navigate redirect back ini mmasih basic, diperlukan tahap selanjutnya menggunakan redux untuk mendaoatkan history page yang sebelumnya dibuka
 
 // ==========================================================================
-
+import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, Navigate } from 'react-router-dom'
 import '../css/login.css'

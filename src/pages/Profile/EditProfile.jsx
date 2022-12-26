@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef, onChange } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 // Update Profile
@@ -9,7 +10,6 @@ function Pribadi() {
   let iconProfile = document.getElementById('popup-profile')
   const { getUserData } = useSelector(state => state.userReducer)
   const formData = new FormData();
-  const fileField = document.querySelector('input[type="file"]');
 
   const username = useRef(null)
   const nama_depan = useRef(null)
@@ -22,7 +22,6 @@ function Pribadi() {
   const visanumber = useRef(null)
   const [errMsg, setErrMsg] = useState(null)
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
 
 
 
@@ -54,7 +53,7 @@ function Pribadi() {
 
     try {
       const url = `${process.env.REACT_APP_API_SERVER_URL}`
-      const response = fetch(`${url}/api/v1/update-profile`, {
+      fetch(`${url}/api/v1/update-profile`, {
         method: 'PUT',
         body: formData,
         headers: {

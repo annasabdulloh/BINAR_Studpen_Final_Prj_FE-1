@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 // import './style.css'
 import { useSelector } from 'react-redux';
+import React from 'react'
 
 function Verif() {
   const { getHistoryData } = useSelector(state => state.historyReducer)

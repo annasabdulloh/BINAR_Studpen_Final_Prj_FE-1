@@ -1,19 +1,8 @@
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import Loading from './Loading'
+import React from 'react'
 
-const userToken = localStorage.getItem('x-acceaa-token')
-const idTrx = localStorage.getItem('trx-id')
 
 function DetailPembelianTerisi() {
 
-  const [data, setData] = useState(null)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    
-  })
 
   return (
     <div>

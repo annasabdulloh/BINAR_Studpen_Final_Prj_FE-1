@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { TextField, Icon } from '@mui/material';
-import { LocalizationProvider, DatePicker as MuiDatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { Button, Form, Button as BsButton } from 'react-bootstrap';
 import './PageCariTiketPP.css';
 import Select from 'react-select'
 import Loading from '../Loading';
@@ -79,8 +77,6 @@ const getTickets = (params, callback, callbackLoading) => {
 }
 
 const PageCariTiketPP = () => {
-  const [rectangleDateTimePickerValue, setRectangleDateTimePickerValue] = useState(null);
-  const [rectangleDateTimePicker1Value, setRectangleDateTimePicker1Value] = useState(null);
   const [isLoaading, setLoading] = useState(true)
   const [airports, setAirports] = useState({ airportsF: [], airportsL: [] })
   const [counter, setCounter] = useState(0)
@@ -139,7 +135,7 @@ const PageCariTiketPP = () => {
       typeTrip === "rounded" ? dateReturn.current.value : 'Kosong');
 
     // Tampilkan data di banner tengah putih
-    let tickets = getTickets({
+    getTickets({
       typeTrip, fromAirport,
       destAirport,
       classTicket,

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
@@ -240,4 +241,4 @@ export default function MyChart() {
             </div>
         )
     );
-};
+}

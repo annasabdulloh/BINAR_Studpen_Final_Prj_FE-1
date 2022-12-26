@@ -1,5 +1,6 @@
 import { Html5QrcodeScanner } from "html5-qrcode";
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const qrcodeRegionId = "html5qr-code-full-region";
 
@@ -49,6 +50,12 @@ class Html5QrcodePlugin extends React.Component {
             this.props.qrCodeSuccessCallback,
             this.props.qrCodeErrorCallback);
     }
-};
+}
+
+Html5QrcodePlugin.propTypes = {
+    verbose: PropTypes.node.isRequired,
+    qrCodeErrorCallback: PropTypes.node.isRequired,
+    qrCodeSuccessCallback: PropTypes.node.isRequired
+}
 
 export default Html5QrcodePlugin;

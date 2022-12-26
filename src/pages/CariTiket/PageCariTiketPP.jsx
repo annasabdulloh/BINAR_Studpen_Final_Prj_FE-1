@@ -51,7 +51,7 @@ const getAllAirport = (callbackState, callbackLoading) => {
   })
 }
 
-const getTickets = (params, callback, callbackLoading) => {
+const getTickets = (params, callbackData, callbackLoading) => {
   // console.log(params);
   callbackLoading(true)
   let url = `${process.env.REACT_APP_API_SERVER_URL}/api/v1/filter-ticket?from=${params.fromAirport}&destination=${params.destAirport}&depart=${params.dateAir.current.value}&kelas=${params.classTicket}&type_passenger[]=${params.passenger}${params.typeTrip === "rounded" ? '&return=' + params.dateReturn.current.value : ''}`
@@ -63,15 +63,15 @@ const getTickets = (params, callback, callbackLoading) => {
   }).then(response => {
     if (response.status == 200) {
       response.json().then(res => {
-        callback(res.tickets)
+        callbackData(res.tickets)
         callbackLoading(false)
       })
     } else {
-      callback(null)
+      callbackData(null)
       callbackLoading(false)
     }
   }).catch(() => {
-    callback(null)
+    callbackData(null)
     callbackLoading(false)
   })
 }

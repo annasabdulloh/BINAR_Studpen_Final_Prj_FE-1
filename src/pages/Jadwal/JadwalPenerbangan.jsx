@@ -50,7 +50,7 @@ const getAllAirport = (callbackState, callbackLoading) => {
   })
 }
 
-const getSchedule = (params, callback, callbackLoading) => {
+const getSchedule = (params, callbackData, callbackLoading) => {
   callbackLoading(true)
   let url = `${process.env.REACT_APP_API_SERVER_URL}/api/v1/get-schedule?from=${params.fromAirport}&destination=${params.destAirport}&depart=${params.dateAir.current.value}`;
   console.log(url)
@@ -63,15 +63,15 @@ const getSchedule = (params, callback, callbackLoading) => {
     .then(response => {
       if (response.status == 200) {
         response.json().then(res => {
-          callback(res.tickets)
+          callbackData(res.tickets)
           callbackLoading(false)
         })
       } else {
-        callback(null)
+        callbackData(null)
         callbackLoading(false)
       }
     }).catch(() => {
-      callback(null)
+      callbackData(null)
       callbackLoading(false)
     })
 }

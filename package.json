@@ -43,7 +43,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.11",

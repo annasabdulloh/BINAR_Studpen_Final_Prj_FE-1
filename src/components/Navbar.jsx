@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 
 import PopUpNotifikasi from "../pages/Notifikasi/PopUpNotif";
 import PopUp from '../pages/Profile/popUp';
+import  PropTypes  from 'prop-types';
 
-const Navbar = () => {
+const Navbar = ({notifications}) => {
 
   const [profileOpn, setOpenProfile] = useState(true)
   const [notifOpen, setNotif] = useState(true)
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   function handleClickOpen() {
     nav = document.getElementById('nav')
-    console.log(nav, navOpen);
+    // console.log(nav, navOpen);
     try {
       if (navOpen) {
         nav.classList.add('show')
@@ -32,7 +33,7 @@ const Navbar = () => {
 
   function handleClickNotif() {
     notif = document.getElementById('popup-notif')
-    console.log(notif, notifOpen);
+    // console.log(notif, notifOpen);
     try {
       if (notifOpen) {
         notif.classList.remove('d-none')
@@ -60,13 +61,15 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    console.log(getUserData);
+    // handle clode button navbar
+    document.getElementById('notif-close').addEventListener('click', handleClickNotif)
+
   })
 
   return (
     <nav className='navbar navbar-expand-lg'>
       <div id='popup-notif' className='d-none'>
-        <PopUpNotifikasi></PopUpNotifikasi>
+        <PopUpNotifikasi notifications={notifications}></PopUpNotifikasi>
       </div>
       <div id="popup-profile" className='d-none'>
         <PopUp></PopUp>
@@ -125,11 +128,14 @@ const Navbar = () => {
               <li>
                 <a className='nav-link' onClick={handleClickNotif}>
                   <img src='/assets/images/bell.png' alt='' />
+                  {notifications.length > 0 ? (
+                    <span className="badge bg-danger">{notifications.length}</span>
+                  ) : ('')}
                 </a>
               </li>
               <li id='icon-profile' className=''>
                 <a className='nav-link rounded-circle' href='#' onClick={handleClickProfile}>
-                  {getUserData.email} <img width={"40px"} src={process.env.REACT_APP_API_SERVER_URL + getUserData.photo} alt='' />
+                  {getUserData.email} <img width={"40px"} height="40px" className='rounded-circle' src={process.env.REACT_APP_API_SERVER_URL + getUserData.photo} alt='' />
                 </a>
               </li>
             </ul>
@@ -164,6 +170,10 @@ const Navbar = () => {
       </div>
     </nav>
   )
+}
+
+Navbar.propTypes = {
+  notifications : PropTypes.node.isRequired
 }
 
 export default Navbar

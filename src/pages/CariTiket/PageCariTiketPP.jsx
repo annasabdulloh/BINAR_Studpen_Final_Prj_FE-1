@@ -417,14 +417,14 @@ const PageCariTiketPP = () => {
                               &nbsp; &nbsp;{ticket.dest}
                             </p>
                           </div>
-                          <div className="col-lg-4 mt-3">
+                          <div className="col-lg-3 mt-3">
                             <p>{ticket.passenger.passenger}</p>
                             <p>
                               <img className="vector2" alt="" src="../assets/img/departure-43.svg" />
                               &nbsp; &nbsp; {new Date(ticket.date_air).toLocaleString()}
                             </p>
                           </div>
-                          <div className="col-lg-1 mt-3">
+                          <div className="col-lg-2 mt-3">
                             <label htmlFor={'chair_' + ticket.id}>Pilih Kursi : </label>
                             <select id={'chair_' + ticket.id} className="form-select" style={{ height: "unset" }}>
                               {ticket.available.map((chair, index) => {
@@ -462,14 +462,14 @@ const PageCariTiketPP = () => {
                                 &nbsp; &nbsp;{ticket.dest}
                               </p>
                             </div>
-                            <div className="col-lg-4 mt-3">
+                            <div className="col-lg-3 mt-3">
                               <p>{ticket.passenger.passenger}</p>
                               <p>
                                 <img className="vector2" alt="" src="../assets/img/departure-43.svg" />
                                 &nbsp; &nbsp; {new Date(ticket.date_air).toLocaleString()}
                               </p>
                             </div>
-                            <div className="col-lg-1 mt-3">
+                            <div className="col-lg-2 mt-3">
                               <label htmlFor={'chair_' + ticket.id}>Pilih Kursi : </label>
                               <select id={'chair_' + ticket.id} className="form-select" style={{ height: "unset" }}>
                                 {ticket.available.map((chair, index) => {

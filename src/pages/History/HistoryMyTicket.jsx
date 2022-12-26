@@ -83,7 +83,7 @@ const HistoryMyTicket = () => {
   const [msg, setMsg] = useState(null)
   const [pyLoading, setPayLoading] = useState(false)
   const navigate = useNavigate()
-  
+
   userToken = localStorage.getItem('x-access-token')
 
   const handleDetail = (trxId) => {
@@ -101,6 +101,8 @@ const HistoryMyTicket = () => {
             document.getElementById('mid-tkn').value = json.transaction.token_trx
             document.getElementById('pay-button').click()
             setPayLoading(false)
+          }else if(json.transaction.status == 'finished'){
+            window.location.reload()
           } else {
             setMsg("Transaksi yang anda pilih telah berstatus " + json.transaction.status)
             setTimeout(() => {
@@ -258,7 +260,7 @@ const HistoryMyTicket = () => {
 
                 {datas[0].length == 0 ? (
                   <div>
-                    Belum Ada Data Transaksi
+                    <h4>Belum Ada Data Transaksi</h4>
                   </div>
                 ) : (datas[0].map((data, index) => {
                   return (

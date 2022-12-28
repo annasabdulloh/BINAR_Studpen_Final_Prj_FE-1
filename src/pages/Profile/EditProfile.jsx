@@ -39,17 +39,24 @@ function Pribadi() {
       title: title.current.value,
       visanumber: visanumber.current.value
     }
-    console.log(data)
 
     formData.append('username', username.current.value);
     formData.append('f_name', nama_depan.current.value);
     formData.append('l_name', nama_belakang.current.value);
     formData.append('email', email.current.value);
-    formData.append('password', password.current.value);
-    formData.append('re_type_pass', konfirmPass.current.value);
-    formData.append('image', document.getElementById('photo').files[0]);
     formData.append('title', title.current.value);
     formData.append('visa_number', visanumber.current.value);
+    
+    if(document.getElementById('photo').files[0] != undefined){
+      formData.append('image', document.getElementById('photo').files[0]);
+    }
+
+    if(password.current.value != '' && konfirmPass.current.value != ''){
+      formData.append('password', password.current.value);
+      formData.append('re_type_pass', konfirmPass.current.value);
+    }
+
+    console.log(data)
 
     try {
       const url = `${process.env.REACT_APP_API_SERVER_URL}`
@@ -81,32 +88,32 @@ function Pribadi() {
       setLoading(false)
     }
 
-    //   try {
-    //     const url = `${process.env.REACT_APP_API_SERVER_URL}`
-    //     const response = await fetch(`${url}/api/v1/update-profile`, {
-    //       method: 'PUT',
-    //       headers: {
-    //         'Content-Type': 'multipart/form-data',
-    //         'x-access-token': localStorage.getItem('x-access-token')
-    //       },
-    //       body: JSON.stringify({
-    //         username: data.username,
-    //         f_name: data.nama_depan,
-    //         l_name: data.nama_belakang,
-    //         email: data.email,
-    //         password: data.password,
-    //         re_type_pass: data.konfirmPass,
-    //         photo: data.photo,
-    //         title: data.title,
-    //         visa_number: data.visanumber
-    //       })
-    //     })
-    //     const json = await response.json()
-    //     console.log(json)
-    // } catch (error) {
-    //   setErrMsg(error)
-    //   setLoading(false)
-    // }
+      try {
+        const url = `${process.env.REACT_APP_API_SERVER_URL}`
+        const response = await fetch(`${url}/api/v1/update-profile`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'x-access-token': localStorage.getItem('x-access-token')
+          },
+          body: JSON.stringify({
+            username: data.username,
+            f_name: data.nama_depan,
+            l_name: data.nama_belakang,
+            email: data.email,
+            password: data.password,
+            re_type_pass: data.konfirmPass,
+            photo: data.photo,
+            title: data.title,
+            visa_number: data.visanumber
+          })
+        })
+        const json = await response.json()
+        console.log(json)
+    } catch (error) {
+      setErrMsg(error)
+      setLoading(false)
+    }
   }
 
   function handleClickProfile() {
@@ -263,7 +270,7 @@ function Pribadi() {
                 id='title'
                 className='form-select-sm form-select'
                 required
-                defaultValue={getUserData.title}
+                placeholder={getUserData.title}
               >
                 <option value='Mr'>Mr</option>
                 <option value='Mrs'>Mrs</option>

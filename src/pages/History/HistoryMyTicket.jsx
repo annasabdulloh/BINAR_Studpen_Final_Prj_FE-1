@@ -43,7 +43,7 @@ const ajaxDeleteTrx = async (trxId) => {
   return response
 }
 
-const ajaxCreateTrx = async (ticketsId, chairsNumber) =>  {
+const ajaxCreateTrx = async (ticketsId, chairsNumber) => {
   let response = await fetch(`${process.env.REACT_APP_API_SERVER_URL}/api/v1/user-transactions`, {
     method: "POST",
     headers: {
@@ -102,7 +102,7 @@ const HistoryMyTicket = () => {
             document.getElementById('mid-tkn').value = json.transaction.token_trx
             document.getElementById('pay-button').click()
             setPayLoading(false)
-          }else if(json.transaction.status == 'finished'){
+          } else if (json.transaction.status == 'finished') {
             window.location.reload()
           } else {
             setMsg("Transaksi yang anda pilih telah berstatus " + json.transaction.status)
@@ -137,18 +137,18 @@ const HistoryMyTicket = () => {
       // Lakukan hit endpoint create trx
       trxDelayed = JSON.parse(trxDelayed)
       ajaxCreateTrx(trxDelayed.tickets_id, trxDelayed.chairs_number).then(res => {
-        if(res.status == 200){
-            setLoaading(true)
-            setCounter(0)
-        }else{
+        if (res.status == 200) {
+          setLoaading(true)
+          setCounter(0)
+        } else {
           setMsg("Transaksi gagal di proses. Silahkan coba lakukan transaksi ulang")
         }
-    })
-    localStorage.removeItem('trx-d');
-    // console.log(JSON.stringify({
-    //   tickets_id: trxDelayed.tickets_id,
-    //   chairs_number: trxDelayed.chairs_number
-    // }))
+      })
+      localStorage.removeItem('trx-d');
+      // console.log(JSON.stringify({
+      //   tickets_id: trxDelayed.tickets_id,
+      //   chairs_number: trxDelayed.chairs_number
+      // }))
     }
 
     // {"tickets_id":["087ec46b-7993-4626-8e8f-e8146193c1f6","2eb3be01-ce08-4943-ac88-0f89a31441ed"], "chairs_number":[10,12]}
@@ -279,6 +279,7 @@ const HistoryMyTicket = () => {
                             return (
                               <div key={index} className="row">
                                 <div className="col-12 text-start">
+                                  <p className='mb-1 mt-3'>ID Ticket {cart.ticket.id}</p>
                                   <div className="fw-bolder">{cart.ticket.from} <img className="" alt="" src="/assets/images/2-way-arrow.png" /> {cart.ticket.dest}</div>
 
                                   <img width={"30%"} src={process.env.REACT_APP_API_SERVER_URL + cart.ticket.logo} alt="" />
@@ -355,6 +356,7 @@ const HistoryMyTicket = () => {
                               return (
                                 <div key={index} className="row">
                                   <div className="col-12 text-start">
+                                    <p className='mb-1 mt-3'>ID Ticket {cart.ticket.id}</p>
                                     <div className="fw-bolder">{cart.ticket.from} <img className="" alt="" src="/assets/images/2-way-arrow.png" /> {cart.ticket.dest}</div>
 
                                     <img width={"30%"} src={process.env.REACT_APP_API_SERVER_URL + cart.ticket.logo} alt="" />
@@ -431,6 +433,7 @@ const HistoryMyTicket = () => {
                             return (
                               <div key={index} className="row">
                                 <div className="col-12 text-start">
+                                  <p className='mb-1 mt-3'>ID Ticket {cart.ticket.id}</p>
                                   <div className="fw-bolder">{cart.ticket.from} <img className="" alt="" src="/assets/images/2-way-arrow.png" /> {cart.ticket.dest}</div>
 
                                   <img width={"30%"} src={process.env.REACT_APP_API_SERVER_URL + cart.ticket.logo} alt="" />

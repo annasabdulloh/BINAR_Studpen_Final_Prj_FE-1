@@ -211,6 +211,7 @@ function DetailTransaksi() {
                   return (
                     <div key={index} className="row mb-3">
                       <div className="col-md-4">
+                        <div>ID Ticket : {value.ticket.id}</div>
                         <div className='fs-5 fw-bold'>Maskapai : {value.ticket.name}</div>
                         <img width={"100%"} src={process.env.REACT_APP_API_SERVER_URL + value.ticket.logo} alt="logo" />
                         <p>Flight Number : <b>{value.ticket.flight_number}</b></p>

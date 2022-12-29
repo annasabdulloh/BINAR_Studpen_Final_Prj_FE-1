@@ -152,6 +152,7 @@ export default function Login() {
                       Email
                     </label>
                     <input
+                      data-testid={'Email'}
                       ref={email}
                       type='email'
                       placeholder='Masukkan Email'
@@ -165,6 +166,7 @@ export default function Login() {
                       Password
                     </label>
                     <input
+                      data-testid={'password'}
                       ref={password}
                       type='password'
                       placeholder='Masukkan Password'
@@ -178,7 +180,8 @@ export default function Login() {
                       {isLoading ? (<button className="btn btn-primary mb-3 disabled" type="button" disabled>
                         <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
-                      </button>) : (<div className='text-center'><input
+                      </button>) : (<div className='text-center'><input id='submit'
+                        data-testid={'submit'}
                         type='submit'
                         value={'Login'}
                         className='btn-login p-2 mb-3 bg-primary text-white fw-bold border-0'
@@ -191,7 +194,7 @@ export default function Login() {
                     </div>
                     <div className='signup-link text-center text-decoration-none'>
                       Belum memiliki akun :
-                      <Link to='/register' style={{ textDecoration: 'none' }}>
+                      <Link to='/register' data-testid="register-btn" style={{ textDecoration: 'none' }}>
                         Register
                       </Link>
                     </div>

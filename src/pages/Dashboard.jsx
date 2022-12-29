@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
+
+  useEffect(() => {
+    let trxDelayed = localStorage.getItem('trx-d')
+    let chartDelayed = localStorage.getItem('chart-d')
+
+    if (trxDelayed !== null){
+      window.location.replace('/my-ticket')
+    }else if (chartDelayed != null){
+      window.location.replace('/my-chart')
+    }
+  })
+
   return (
     <>
       <div className="position-relative">

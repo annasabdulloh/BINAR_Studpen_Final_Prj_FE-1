@@ -28,6 +28,7 @@ import MyChart from "./pages/MyChart";
 import PageCariTiketPP from "./pages/CariTiket/PageCariTiketPP";
 import Page404 from "./pages/Page404";
 import DetailTransaksi from "./pages/DetailTransaksi";
+import ForgotPass from "./pages/ResetPass";
 import io from "socket.io-client";
 
 // ======================= User Redux login ================================
@@ -68,6 +69,7 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/forgot-password' element={<ForgotPass />} />
         <Route path='/schedule' element={<ProtectedRoute active={false}><Jadwal /></ProtectedRoute>} />
         <Route path='/' element={<ProtectedRoute active={false}><Dashboard /></ProtectedRoute>} />
         <Route path='/please-verify' element={<VerifFirst></VerifFirst>} />

@@ -198,6 +198,11 @@ export default function Login() {
                         Register
                       </Link>
                     </div>
+                    <div className='signup-link text-center text-decoration-none mt-3'>
+                      <Link to='/forgot-password' data-testid="register-btn" style={{ textDecoration: 'none' }}>
+                        Lupa Password
+                      </Link>
+                    </div>
                   </div>
                 </form>
               </div>

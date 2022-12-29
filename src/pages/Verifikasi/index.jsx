@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom'
 // import './style.css'
 import { useSelector } from 'react-redux';
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Verif() {
   const { getHistoryData } = useSelector(state => state.historyReducer)
+
+  useEffect(() => {
+    let trxDelayed = localStorage.getItem('trx-d')
+    let chartDelayed = localStorage.getItem('chart-d')
+
+    if (trxDelayed !== null){
+      window.location.replace('/my-ticket')
+    }else if (chartDelayed != null){
+      window.location.replace('/my-chart')
+    }
+  })
+
   return (
     <div>
       <div></div>

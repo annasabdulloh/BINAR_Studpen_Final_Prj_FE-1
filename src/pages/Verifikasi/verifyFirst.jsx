@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 // import './style.css'
 
@@ -41,11 +40,11 @@ function VerifFirst() {
               </div>
               <div className='d-flex justify-content-center'>
                 <div className='text-center' style={{ width: 518, height: 60 }}>
-                  <Link to={getHistoryData ? getHistoryData : '/'}>
+                  <a href={getHistoryData ? getHistoryData : '/'}>
                     <button className='btn btn-primary'>
                       Kembali ke Terakhir Dibuka
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

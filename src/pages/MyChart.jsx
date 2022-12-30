@@ -82,7 +82,7 @@ export default function MyChart() {
             },
             body: JSON.stringify({
                 wait_list_id: trxId,
-                chairs_number: arrChartId
+                chairs_number: chairNUmbers
             })
         })
         if(response.status != 200){

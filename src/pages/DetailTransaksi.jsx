@@ -225,7 +225,7 @@ function DetailTransaksi() {
                         <input className='form-control' type="text" readOnly value={value.ticket.passenger.passenger}/>
                       </div>
                       <div className="col-md-4">
-                        <button className={"btn "+ (value.status == 'pending-payment' ? 'btn-warning' : (value.status == 'expired' ? 'btn-danger' : 'btn-success')) }>{value.status}</button>
+                        <button className={"mt-3 btn "+ (value.status == 'pending-payment' ? 'btn-warning' : (value.status == 'expired' ? 'btn-danger' : 'btn-success')) }>{value.status}</button>
                       </div>
                       <hr className='mt-3' />
                     </div>
